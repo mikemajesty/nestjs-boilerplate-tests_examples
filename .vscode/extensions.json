@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "vscode-icons-team.vscode-icons",
+    "skyran.js-jsx-snippets",
+    "firsttris.vscode-jest-runner",
+    "xabikos.javascriptsnippets",
+    "eamodio.gitlens",
+    "kisstkondoros.vscode-codemetrics"
+  ]
+}
