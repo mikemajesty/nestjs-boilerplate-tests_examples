@@ -15,7 +15,7 @@ describe('HealthController', () => {
   });
 
   describe('getGealth', () => {
-    it(`should return "${new HealthService().getText()}`, () => {
+    it(`should return "${new HealthService().getText()}"`, () => {
       expect(appController.getGealth()).toBe(new HealthService().getText());
     });
   });
