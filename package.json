@@ -8,6 +8,7 @@
   "scripts": {
     "prebuild": "rimraf bin",
     "build": "nest build",
+    "prepare": "husky install",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --debug 0.0.0.0:5860 --watch",

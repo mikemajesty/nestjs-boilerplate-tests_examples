@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppModule } from '../module';
+import { AppModule } from '../app.module';
 
-describe('HealthController', () => {
+describe('AppModule', () => {
   let appModule: AppModule;
 
   beforeEach(async () => {
@@ -12,9 +12,7 @@ describe('HealthController', () => {
     appModule = app.get<AppModule>(AppModule);
   });
 
-  describe('AppModule', () => {
-    it('should verify instanceOf "AppModule"', () => {
-      expect(appModule).toBeInstanceOf(AppModule);
-    });
+  it('should verify instanceOf "AppModule"', () => {
+    expect(appModule).toBeInstanceOf(AppModule);
   });
 });
