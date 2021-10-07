@@ -7,7 +7,7 @@ services:
       dockerfile: DockerfileLocal
     ports:
       - "3000:3000"
-      - "5870:5870"
+      - "5860:5860"
     env_file: develop.env
     volumes:
       - .:/src:cached

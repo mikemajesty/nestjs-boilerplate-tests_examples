@@ -1,23 +1,17 @@
 {
   "version": "0.2.0",
-  "configurations": [{
+  "configurations": [
+    {
+      "name": "Debug: App",
       "type": "node",
       "request": "attach",
-      "name": "Debug",
-      "address": "127.0.0.1",
-      "port": 5870,
-      "protocol": "inspector",
-      "restart": true,
-      "sourceMaps": true,
-      "localRoot": "${workspaceRoot}",
       "remoteRoot": "/src",
-      "outFiles": [
-        "${workspaceRoot}/dist/src/*/.js"
-      ],
-      "skipFiles": [
-        "${workspaceRoot}/node_modules/*/.js",
-        "<node_internals>/*/.js"
-      ]
+      "localRoot": "${workspaceFolder}",
+      "protocol": "inspector",
+      "port": 5860,
+      "restart": true,
+      "address": "0.0.0.0",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
-}
+ }
