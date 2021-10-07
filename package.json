@@ -2,9 +2,15 @@
   "name": "boilerplate-nest",
   "version": "0.0.1",
   "description": "NestJs boilerplate",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "author": {
+    "name": "Mike Lima",
+    "email": "mike.rodrigues.lima@gmail.com.br"
+  },
+  "private": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=14 <= 15"
+  },
   "scripts": {
     "prebuild": "rimraf bin",
     "build": "nest build",
