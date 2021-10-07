@@ -12,17 +12,13 @@
     "baseUrl": "./src",
     "outDir": "bin/src",
     "allowJs": true,
-    "paths": {
-      "~/*": [
-        "./src/*"
-      ]
-    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true
   }
 }

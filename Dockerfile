@@ -20,4 +20,4 @@ COPY --from=0 /dist /nest-boilerplate
 
 WORKDIR /nest-boilerplate
 
-CMD [ "yarn", "start:prod"]
+CMD [ "yarn", "start:prd"]
