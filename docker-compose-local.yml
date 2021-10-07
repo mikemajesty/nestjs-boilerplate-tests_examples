@@ -4,7 +4,7 @@ services:
     container_name: nestjs_boilerplate
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: DockerfileLocal
     ports:
       - "3000:3000"
       - "5860:5860"

@@ -14,6 +14,11 @@ $ yarn
 
 ```bash
 # development
+$ start:dev
+```
+
+```bash
+# production
 $ docker-compose up --build
 ```
 
