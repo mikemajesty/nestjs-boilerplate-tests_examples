@@ -13,7 +13,7 @@
 
 - `src/main.ts`: Application entry point.
 - `src/config/`: Application setup for settings and environment variables.
-- `src/modules/`: Application modules, may contain; services, controller, repositories and ect.
+- `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
 
 ## Installation
 
