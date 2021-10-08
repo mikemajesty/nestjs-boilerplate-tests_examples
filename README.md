@@ -37,18 +37,14 @@ PORT=3000
 bash $ yarn
 ```
 
-```
-
 ## Running the app
 
 ```
-
-```bash
 # development
 $ start:dev
 ```
 
-```bash
+```
 # production
 $ docker-compose up --build
 ```
