@@ -9,13 +9,11 @@
 - [NVM](https://github.com/nvm-sh/nvm#installing-and-updating)
   - Node >=14 <=15
 
+## Architecture
+
 - `src/main.ts`: Application entry point.
 - `src/config/`: Application setup for settings and environment variables.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and ect.
-
-## Architecture
-
-
 
 ## Installation
 
