@@ -8,6 +8,7 @@
     "**/.git": true,
     "**/*lock*": true,
     "**/*bin*": true,
+    "**/*coverage*": true,
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {
