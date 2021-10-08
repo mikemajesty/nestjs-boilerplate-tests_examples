@@ -4,13 +4,38 @@
 
 [Nest](https://docs.nestjs.com/) framework documentaion.
 
+
+## Requirements
+
+- [NVM](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - Node >=14 <=15
+
+- `src/main.ts`: Application entry point.
+- `src/config/`: Application setup for settings and environment variables.
+- `src/modules/`: Application modules, may contain; services, repositories and ect.
+
+## Architecture
+
+
+
 ## Installation
 
-```bash
-$ yarn
+```
+bash $ yarn
 ```
 
 ## Running the app
+
+1 - create file
+```
+ touch develop.env
+```
+
+2 - add
+```
+ENV=dev
+PORT=3000
+```
 
 ```bash
 # development

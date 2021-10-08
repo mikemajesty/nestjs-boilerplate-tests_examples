@@ -1,16 +1,22 @@
 import { NestFactory } from '@nestjs/core';
+import { Settings } from './config/settings';
 import { AppModule } from './modules/app.module';
-import { AppLogger } from './modules/shared/logger/logger.service';
+import { LoggerService } from './modules/shared/logger/logger.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,
   });
 
-  app.useLogger(app.get(AppLogger));
+  app.useLogger(new LoggerService());
   app.setGlobalPrefix('api');
 
-  await app.listen(3000);
+  const logger = new LoggerService('Start');
+
+  const { ENV, PORT } = new Settings();
+
+  logger.log(`API listening at ${PORT} on ${ENV.toUpperCase()} 🚀\n`);
+  await app.listen(PORT);
 }
 
 bootstrap();

@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { AppLogger } from '../shared/logger/logger.service';
+import { LoggerService } from '../shared/logger/logger.service';
 
 @Injectable()
 export class HealthService {
-  private readonly logger = new AppLogger(HealthService.name);
+  constructor(private logger: LoggerService) {
+    this.logger.setContext(HealthService.name);
+  }
 
   private text = 'nestjs-boilerplate-api UP!!!';
 
