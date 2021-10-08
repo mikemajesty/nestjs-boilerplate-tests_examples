@@ -17,11 +17,8 @@
 
 ## Installation
 
-```
-bash $ yarn
-```
 
-## Running the app
+### prerequisites
 
 1 - create file
 ```
@@ -32,6 +29,14 @@ bash $ yarn
 ```
 ENV=dev
 PORT=3000
+
+
+```
+bash $ yarn
+```
+
+## Running the app
+
 ```
 
 ```bash
