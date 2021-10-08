@@ -15,7 +15,7 @@
 - `src/config/`: Application setup for settings and environment variables.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
 
-### prerequisites
+## prerequisites
 
 1 - create file
 ```
