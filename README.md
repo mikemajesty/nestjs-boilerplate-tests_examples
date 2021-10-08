@@ -15,9 +15,6 @@
 - `src/config/`: Application setup for settings and environment variables.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
 
-## Installation
-
-
 ### prerequisites
 
 1 - create file
@@ -32,9 +29,10 @@ PORT=3000
 
 ```
 
+## Installation
 
 ```
-bash $ yarn
+ yarn
 ```
 
 ## Running the app
