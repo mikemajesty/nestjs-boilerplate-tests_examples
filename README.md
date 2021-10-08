@@ -25,12 +25,13 @@
  touch develop.env
 ```
 
-2 - add
+2 - add on file
 ```
 ENV=dev
 PORT=3000
 
 ```
+
 
 ```
 bash $ yarn
