@@ -1,16 +1,20 @@
 import { Injectable } from '@nestjs/common';
-import { LoggerService } from '../shared/logger/logger.service';
+import { LoggerService } from '../common/logger/service';
 
 @Injectable()
 export class HealthService {
-  constructor(private logger: LoggerService) {
-    this.logger.setContext(HealthService.name);
+  constructor(private loggerService: LoggerService) {
+    this.loggerService.setContext(HealthService.name);
   }
 
   private text = 'nestjs-boilerplate-api UP!!!';
-
   getText(): string {
-    this.logger.log(this.text);
-    return this.text;
+    try {
+      this.loggerService.log(this.text);
+      return this.text;
+    } catch (error) {
+      this.loggerService.error(error);
+      throw error;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { LoggerService } from '../../shared/logger/logger.service';
+import { LoggerService } from '../../common/logger/service';
 import { HealthController } from '../controller';
 import { HealthService } from '../service';
 
@@ -16,9 +16,7 @@ describe('HealthController', () => {
   });
 
   describe('getGealth', () => {
-    it(`should return "${new HealthService(
-      new LoggerService(),
-    ).getText()}"`, () => {
+    it(`should return "nestjs-boilerplate-api UP!!!"`, () => {
       expect(appController.getGealth()).toBe(
         new HealthService(new LoggerService()).getText(),
       );

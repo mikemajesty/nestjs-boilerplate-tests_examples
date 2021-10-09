@@ -60,6 +60,43 @@ $ yarn  test:e2e
 $ yarn  test:coverage
 ```
 
+
+## Usage
+
+1. throw error
+
+```
+throw new ErrorRest({
+        context: `[${HealthService.name}/getText]`,
+        status: HttpStatus.BAD_REQUEST,
+        responde: 'Error message',
+      });
+
+```
+
+1. log error
+
+```
+import { LoggerService } from '../shared/logger/service';
+
+export class Example {
+  constructor(private loggerService: LoggerService) {
+    this.loggerService.setContext(Example.name);
+  }
+
+  private text = 'nestjs-boilerplate-api UP!!!';
+  example(): string {
+    try {
+      this.loggerService.log(this.text);
+    } catch (error) {
+      this.loggerService.error(error);
+      throw error;
+    }
+  }
+}
+
+```
+
 The following is a list of all the people that have contributed to Legend of GitHub. Thanks for your contributions!
 
 [<img alt="mikemajesty" src="https://avatars1.githubusercontent.com/u/11630212?s=460&v=4&s=117" width="117">](https://github.com/mikemajesty)

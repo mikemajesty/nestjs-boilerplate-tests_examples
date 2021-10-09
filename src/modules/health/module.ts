@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { LoggerService } from '../shared/logger/logger.service';
+import { LoggerService } from '../common/logger/service';
 import { HealthController } from './controller';
 import { HealthService } from './service';
 

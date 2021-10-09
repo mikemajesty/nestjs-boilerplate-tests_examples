@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { SharedModule } from './common/common.module';
 import { HealthModule } from './health/module';
-import { SharedModule } from './shared/shared.module';
 
 @Module({
   imports: [HealthModule, SharedModule],
