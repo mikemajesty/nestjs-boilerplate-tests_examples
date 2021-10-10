@@ -75,19 +75,10 @@ $ yarn  test:coverage
 import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
-      context: `${HealthService.name}/'getText'`, //function that throw error
+      context: `${HealthService.name}/'getText'`, //function that will throw error
       error: this.text,
       status: HttpStatus.INTERNAL_SERVER_ERROR,
     });
-
-OR
-
-try {
-      await this.axios.post('url', { url: 'url' });
-    } catch (error) {
-      error.context = `${HealthService.name}/getText`; //function that throw error
-      throw error;
-    }
 
 ```
 
