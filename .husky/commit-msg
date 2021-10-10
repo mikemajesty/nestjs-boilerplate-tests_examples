@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/husky.sh"
 
-echo '\nI Know What You Did Last Commit\n' git log -1 --oneline
+echo '\nI Know What You Did Last Commit\n' && git log -1 --oneline
