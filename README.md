@@ -30,6 +30,7 @@
 ```
 ENV=dev
 PORT=3000
+TZ ='America/Sao_Paulo' | 'your timezone'
 
 ```
 
