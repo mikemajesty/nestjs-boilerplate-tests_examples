@@ -24,10 +24,10 @@ export class AppExceptionFilter implements ExceptionFilter {
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
     exception.uuid = uuidv4();
-    exception.context = exception.context
-      ? exception.context
-      : AppExceptionFilter.name;
 
+    if (!exception?.context) {
+      exception.context = AppExceptionFilter.name;
+    }
     new LoggerService().error(exception);
 
     const code = exception.code || status || HttpStatus.INTERNAL_SERVER_ERROR;

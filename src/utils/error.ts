@@ -8,11 +8,11 @@ export class ErrorRest extends HttpException {
   statusCode: number;
   /**
    * @param status HTTP response status code. default is
-   * @param message string or object describing the error condition.
+   * @param error string or object describing the error condition.
    * @param context logger context
    */
-  constructor(error: { message: string; context: string; status?: number }) {
-    super(error.message, error.status || 500);
+  constructor(error: { error: string; context: string; status?: number }) {
+    super(error.error, error.status || 500);
     this.context = error.context;
     this.statusCode = super.getStatus();
   }

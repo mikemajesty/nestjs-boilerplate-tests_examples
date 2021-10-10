@@ -75,10 +75,19 @@ $ yarn  test:coverage
 import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
-        context: `[${HealthService.name}/getText]`,
-        message: 'Error message',
-        status: HttpStatus.INTERNAL_SERVER_ERROR,
-      });
+      context: `${HealthService.name}/'getText'`, //function that throw error
+      error: this.text,
+      status: HttpStatus.INTERNAL_SERVER_ERROR,
+    });
+
+OR
+
+try {
+      await this.axios.post('url', { url: 'url' });
+    } catch (error) {
+      error.context = `${HealthService.name}/getText`; //function that throw error
+      throw error;
+    }
 
 ```
 
@@ -89,7 +98,7 @@ import { LoggerService } from 'shared/logger/service';
 
 export class Example {
   constructor(private loggerService: LoggerService) {
-    this.loggerService.setContext(Example.name);
+    this.loggerService.setContext(Example.name); // optional
   }
 
   example(): void {
