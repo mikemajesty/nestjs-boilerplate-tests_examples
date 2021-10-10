@@ -3,12 +3,13 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus,
+  HttpStatus
 } from '@nestjs/common';
 import * as moment from 'moment';
-import { ErrorRest } from 'utils/error';
 import { v4 as uuidv4 } from 'uuid';
 import { LoggerService } from '../modules/common/logger/service';
+import * as errorStatus from '../static/status.json';
+import { ErrorRest } from '../utils/error';
 
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {
@@ -23,12 +24,17 @@ export class AppExceptionFilter implements ExceptionFilter {
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
     exception.uuid = uuidv4();
+    exception.context = exception.context
+      ? exception.context
+      : AppExceptionFilter.name;
+
     new LoggerService().error(exception);
 
+    const code = exception.code || status || HttpStatus.INTERNAL_SERVER_ERROR;
     const error = {
-      code: exception.code || status || HttpStatus.INTERNAL_SERVER_ERROR,
+      code,
       traceId: exception.uuid,
-      message: exception.message,
+      message: errorStatus[code] || exception.message,
       timestamp: moment(new Date()).format('DD/MM/yyyy HH:mm:ss'),
       path: request.url,
     };

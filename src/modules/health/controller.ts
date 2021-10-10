@@ -1,9 +1,7 @@
-import { Controller, Get, UseFilters } from '@nestjs/common';
-import { AppExceptionFilter } from '../../filters/http-exception.filter';
+import { Controller, Get } from '@nestjs/common';
 import { HealthService } from './service';
 
 @Controller()
-@UseFilters(new AppExceptionFilter())
 export class HealthController {
   constructor(private healthService: HealthService) {}
 
