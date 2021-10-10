@@ -4,4 +4,4 @@ import { LoggerModule } from './logger/module';
 @Module({
   imports: [LoggerModule],
 })
-export class SharedModule {}
+export class CommonModule {}

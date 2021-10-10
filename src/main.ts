@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { Settings } from './config/settings';
+import { AppExceptionFilter } from './filters/http-exception.filter';
 import { AppModule } from './modules/app.module';
 import { LoggerService } from './modules/common/logger/service';
 
@@ -8,6 +9,7 @@ async function bootstrap() {
     bufferLogs: true,
   });
 
+  app.useGlobalFilters(new AppExceptionFilter());
   app.useLogger(new LoggerService());
   app.setGlobalPrefix('api');
 
