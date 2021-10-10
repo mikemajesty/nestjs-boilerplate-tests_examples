@@ -1,1 +1,5 @@
-echo $HUSKY_GIT_PARAMS
+#!/bin/sh
+. "$(dirname "$0")/husky.sh"
+
+yarn lint
+yarn format
