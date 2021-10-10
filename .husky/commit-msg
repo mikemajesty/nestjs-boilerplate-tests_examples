@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/husky.sh"
 
-echo "=============================================="
+echo I Know What You Did Last Commit
