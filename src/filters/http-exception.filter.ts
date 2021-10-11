@@ -3,14 +3,13 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus
+  HttpStatus,
 } from '@nestjs/common';
 import * as moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 import { LoggerService } from '../modules/common/logger/service';
 import * as errorStatus from '../static/status.json';
 import { ErrorRest } from '../utils/error';
-
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {
   catch(exception: ErrorRest, host: ArgumentsHost): void {
