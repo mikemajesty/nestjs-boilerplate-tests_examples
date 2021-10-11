@@ -12,7 +12,7 @@ describe('AppModule', () => {
     appModule = app.get<AppModule>(AppModule);
   });
 
-  it('should verify instanceOf "AppModule"', () => {
+  it('should be defined', () => {
     expect(appModule).toBeInstanceOf(AppModule);
   });
 });

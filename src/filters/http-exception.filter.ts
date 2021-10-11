@@ -3,7 +3,7 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus,
+  HttpStatus
 } from '@nestjs/common';
 import * as moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,9 +28,15 @@ export class AppExceptionFilter implements ExceptionFilter {
     if (!exception?.context) {
       exception.context = AppExceptionFilter.name;
     }
+
     new LoggerService().error(exception);
 
-    const code = exception.code || status || HttpStatus.INTERNAL_SERVER_ERROR;
+    const code = [
+      exception.code,
+      status,
+      HttpStatus.INTERNAL_SERVER_ERROR,
+    ].find((c) => c);
+
     const error = {
       code,
       traceId: exception.uuid,

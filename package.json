@@ -77,6 +77,7 @@
     "coveragePathIgnorePatterns": [
       "./src/main.ts"
     ],
+    "setupFilesAfterEnv": ["../src/test/jest-init.ts"],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
