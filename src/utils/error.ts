@@ -8,7 +8,7 @@ export class ErrorRest extends HttpException {
   config?: unknown;
   /**
    * @param status HTTP response status code. default is
-   * @param error string or object describing the error condition.
+   * @param error string describing the error condition.
    * @param context logger context
    */
   constructor(error: { error: string; context?: string; status?: number }) {
