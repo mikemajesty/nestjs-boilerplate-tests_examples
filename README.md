@@ -25,21 +25,21 @@
 
 1 - create file
 ```
- touch .env
+$ touch .env
 ```
 
 2 - add on file
 ```
 ENV=dev
 PORT=3000
-TZ ='America/Sao_Paulo'
+TZ ='America/Sao_Paulo' // your timezone
 
 ```
 
 ## Installation
 
 ```
- yarn
+$ yarn
 ```
 
 ## Running the app
@@ -76,9 +76,9 @@ $ yarn  test:coverage
 import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
-      context: `${HealthService.name}/'getText'`, //function that will throw error
-      error: this.text,
-      status: HttpStatus.INTERNAL_SERVER_ERROR,
+      error: 'Error message',
+      context: `${HealthService.name}/'getText'`, //optional: function that will throw error
+      status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
     });
 
 ```
