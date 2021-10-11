@@ -25,7 +25,7 @@
 
 1 - create file
 ```
- touch develop.env
+ touch .env
 ```
 
 2 - add on file

@@ -8,6 +8,6 @@ services:
     ports:
       - "3000:3000"
       - "5860:5860"
-    env_file: develop.env
+    env_file: .env
     volumes:
       - .:/src:cached
