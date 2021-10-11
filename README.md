@@ -19,6 +19,7 @@
 - `src/filters/`: Exception Filters are called after the route handler and after the interceptors. They are the last place to make changes before a response goes out.
 - `src/static/`: Application static files like JSON, CSV etc.
 - `src/static/status.json`: Error message that will show to user accordind to status.
+- `src/test/jest-init.ts`: Test startup settings like envs and mocks.
 
 ## prerequisites
 
@@ -82,7 +83,7 @@ throw new ErrorRest({
 
 ```
 
-1. log error
+1. logs
 
 ```
 import { LoggerService } from 'shared/logger/service';
