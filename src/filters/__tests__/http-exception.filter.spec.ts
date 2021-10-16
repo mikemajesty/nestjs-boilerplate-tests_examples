@@ -20,7 +20,6 @@ describe('AppExceptionFilter', () => {
   test('should catch successfully', () => {
     const error = new ErrorRest({
       error: 'Error',
-      context: AppExceptionFilter.name,
       status: HttpStatus.INTERNAL_SERVER_ERROR,
     });
 

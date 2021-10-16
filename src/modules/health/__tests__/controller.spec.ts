@@ -17,7 +17,7 @@ describe('HealthController', () => {
 
   describe('getGealth', () => {
     it(`should return "nestjs-boilerplate-api UP!!!"`, () => {
-      expect(appController.getGealth()).toBe(
+      expect(appController.getHealth()).toBe(
         new HealthService(new LoggerService()).getText(),
       );
     });

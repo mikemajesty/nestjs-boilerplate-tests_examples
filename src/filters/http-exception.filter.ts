@@ -15,7 +15,7 @@ export class AppExceptionFilter implements ExceptionFilter {
   catch(exception: ErrorRest, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
-    const request = ctx.getRequest();
+    const request = ctx.getRequest<Request>();
 
     const status =
       exception instanceof HttpException
@@ -23,10 +23,6 @@ export class AppExceptionFilter implements ExceptionFilter {
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
     exception.uuid = uuidv4();
-
-    if (!exception?.context) {
-      exception.context = AppExceptionFilter.name;
-    }
 
     new LoggerService().error(exception);
 

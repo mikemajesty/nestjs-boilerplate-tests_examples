@@ -12,7 +12,6 @@ describe('LoggerService', () => {
     test('should error successfully', () => {
       const error = new ErrorRest({
         error: 'Error',
-        context: LoggerService.name,
         status: HttpStatus.INTERNAL_SERVER_ERROR,
       });
 
