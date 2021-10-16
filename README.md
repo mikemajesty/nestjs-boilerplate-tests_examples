@@ -50,7 +50,7 @@ $ yarn
 
 ```bash
 # development
-$ start:dev
+$ yarn start:dev
 ```
 
 ```bash
