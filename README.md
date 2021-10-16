@@ -88,7 +88,6 @@ import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
       error: 'Error message',
-      context: `${HealthService.name}/'getText'`, //optional: function that will throw error
       status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
     });
 
@@ -101,7 +100,6 @@ import { LoggerService } from 'shared/logger/service';
 
 export class Example {
   constructor(private loggerService: LoggerService) {
-    this.loggerService.setContext(Example.name); // optional
   }
 
   example(): void {
