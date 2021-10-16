@@ -1,3 +1,4 @@
+import { RequestMethod } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { Settings } from './config/settings';
 import { AppExceptionFilter } from './filters/http-exception.filter';
@@ -14,7 +15,10 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ExceptionInterceptor());
 
   app.useLogger(new LoggerService());
-  app.setGlobalPrefix('api');
+
+  app.setGlobalPrefix('api', {
+    exclude: [{ path: 'health', method: RequestMethod.GET }],
+  });
 
   const logger = new LoggerService('Start');
 
