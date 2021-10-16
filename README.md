@@ -20,6 +20,7 @@
 - `src/modules/common/`: Utilities for the application that will necessarily be used only within the modules.
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
 - `src/filters/`: Exception Filters are called after the route handler and after the interceptors. They are the last place to make changes before a response goes out.
+- `src/interceptors/`: Application interceptors.
 - `src/static/`: Application static files like JSON, CSV etc.
 - `src/static/status.json`: Error message that will show to user accordind to status.
 - `src/test/jest-init.ts`: Test startup settings like envs and mocks.
