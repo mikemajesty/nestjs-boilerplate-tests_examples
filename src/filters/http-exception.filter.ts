@@ -3,10 +3,9 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus,
+  HttpStatus
 } from '@nestjs/common';
 import * as moment from 'moment';
-import { v4 as uuidv4 } from 'uuid';
 import { LoggerService } from '../modules/common/logger/service';
 import * as errorStatus from '../static/status.json';
 import { ErrorRest } from '../utils/error';
@@ -21,8 +20,6 @@ export class AppExceptionFilter implements ExceptionFilter {
       exception instanceof HttpException
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
-
-    exception.uuid = uuidv4();
 
     new LoggerService().error(exception);
 
