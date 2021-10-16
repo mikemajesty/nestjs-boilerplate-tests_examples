@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/husky.sh"
 
+yarn commitlint --edit $1
+
 echo '\nI Know What You Did Last Commit\n'

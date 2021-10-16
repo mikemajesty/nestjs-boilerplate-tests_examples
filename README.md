@@ -2,7 +2,10 @@
 
 ## Description
 
-[Nest](https://docs.nestjs.com/) framework documentaion.
+[nest](https://docs.nestjs.com/) framework documentaion.
+[conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) framework documentaion
+[commitizen](https://github.com/commitizen/cz-cli) framework documentaion
+[semantic-release](https://github.com/semantic-release/semantic-release) framework documentaion
 
 ## Requirements
 
@@ -24,12 +27,12 @@
 ## prerequisites
 
 1 - create file
-```
+```bash
 $ touch .env
 ```
 
 2 - add on file
-```
+```bash
 ENV=dev
 PORT=3000
 TZ ='America/Sao_Paulo' // your timezone
@@ -38,18 +41,25 @@ TZ ='America/Sao_Paulo' // your timezone
 
 ## Installation
 
+```bash
+# commitizen
+$ npm install -g commitizen
+# nest
+$ npm i -g @nestjs/cli
 ```
+
+```bash
 $ yarn
 ```
 
 ## Running the app
 
-```
+```bash
 # development
 $ start:dev
 ```
 
-```
+```bash
 # production
 $ docker-compose up --build
 ```
@@ -72,7 +82,7 @@ $ yarn  test:coverage
 
 1. throw error
 
-```
+```bash
 import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
@@ -85,7 +95,7 @@ throw new ErrorRest({
 
 1. logs
 
-```
+```bash
 import { LoggerService } from 'shared/logger/service';
 
 export class Example {
