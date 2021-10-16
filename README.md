@@ -43,13 +43,6 @@ TZ ='America/Sao_Paulo' // your timezone
 ## Installation
 
 ```bash
-# commitizen
-$ npm install -g commitizen
-# nest
-$ npm i -g @nestjs/cli
-```
-
-```bash
 $ yarn
 ```
 
