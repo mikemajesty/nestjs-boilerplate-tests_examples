@@ -96,6 +96,7 @@ throw new ErrorRest({
 
 ```js
 import { LoggerService } from 'shared/logger/service';
+import { ErrorRest } from 'utils/error';
 
 export class Example {
   constructor(private loggerService: LoggerService) {
