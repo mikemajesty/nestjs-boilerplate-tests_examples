@@ -1,16 +1,22 @@
 # NestJs boilerplate API
 
+Verify [CONTRIBUTING](./CONTRIBUTING.md)
+
 ## Description
 
 [nest](https://docs.nestjs.com/) framework documentaion.
+
 [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) framework documentaion
+
 [commitizen](https://github.com/commitizen/cz-cli) framework documentaion
-[semantic-release](https://github.com/semantic-release/semantic-release) framework documentaion
 
 ## Requirements
 
-- [NVM](https://github.com/nvm-sh/nvm#installing-and-updating)
-  - Node >=14 <=15
+- [docker]
+- [docker-compose]
+- [yarn]
+- [NVM]
+  * Node >=14 <=15
 
 ## Architecture
 
