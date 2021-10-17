@@ -82,7 +82,7 @@ $ yarn  test:coverage
 
 1. throw error
 
-```bash
+```js
 import { ErrorRest } from 'utils/error';
 
 throw new ErrorRest({
@@ -94,7 +94,7 @@ throw new ErrorRest({
 
 1. logs
 
-```bash
+```js
 import { LoggerService } from 'shared/logger/service';
 
 export class Example {
@@ -103,6 +103,11 @@ export class Example {
 
   example(): void {
     this.loggerService.log('your text');
+
+    this.loggerService.error(new ErrorRest({
+      error: 'Error message',
+      status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
+    }));
   }
 }
 
