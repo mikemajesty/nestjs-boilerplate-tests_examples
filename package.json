@@ -6,6 +6,11 @@
     "name": "Mike Lima",
     "email": "mike.rodrigues.lima@gmail.com.br"
   },
+  "homepage": "https://github.com/mikemajesty/nestjs-boilerplate#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikemajesty/nestjs-boilerplat.git"
+  },
   "private": false,
   "license": "MIT",
   "engines": {
