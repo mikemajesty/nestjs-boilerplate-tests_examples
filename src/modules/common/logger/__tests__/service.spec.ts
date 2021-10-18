@@ -1,11 +1,14 @@
 import { HttpStatus } from '@nestjs/common';
+import { Settings } from '../../../../config/settings';
 import { ErrorRest } from '../../../../utils/error';
 import { LoggerService } from '../service';
 describe('LoggerService', () => {
   let loggerService: LoggerService;
 
   beforeEach(async () => {
-    loggerService = new LoggerService();
+    const settings = new Settings();
+    settings.ENV = 'dev';
+    loggerService = new LoggerService(settings);
   });
 
   describe('error', () => {

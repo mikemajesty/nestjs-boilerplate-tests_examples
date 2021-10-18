@@ -6,13 +6,12 @@ import { LoggerService } from '../common/logger/service';
 export class HealthService extends AxiosService {
   constructor(private loggerService: LoggerService) {
     super();
-    this.loggerService.setContext(HealthService.name);
   }
 
   private text = 'nestjs-boilerplate-api UP!!!';
 
   getText(): string {
-    this.loggerService.log(this.text);
+    this.loggerService.log(this.text, HealthService.name);
     return this.text;
   }
 }

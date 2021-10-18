@@ -3,9 +3,10 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus,
+  HttpStatus
 } from '@nestjs/common';
 import * as moment from 'moment';
+import { Settings } from '../config/settings';
 import { LoggerService } from '../modules/common/logger/service';
 import * as errorStatus from '../static/status.json';
 import { ErrorRest } from '../utils/error';
@@ -21,7 +22,7 @@ export class AppExceptionFilter implements ExceptionFilter {
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    new LoggerService().error(exception);
+    new LoggerService(new Settings()).error(exception);
 
     const code = [
       exception.code,

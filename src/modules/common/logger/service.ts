@@ -4,11 +4,14 @@ import { ErrorRest } from '../../../utils/error';
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class LoggerService extends ConsoleLogger {
+  constructor(private settings: Settings) {
+    super();
+  }
   error(error: ErrorRest): void {
-    const context = error?.context || this.context;
+    const context = error.context || this.context;
     super.context = context;
 
-    if (new Settings().ENV !== 'test') {
+    if (this.settings.ENV !== 'test') {
       super.error({
         status: error.statusCode || error.code,
         traceId: error.uuid,
