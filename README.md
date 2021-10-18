@@ -39,10 +39,10 @@ $ touch .env
 ```
 
 2. add on file
-```bash
-ENV=dev
-PORT=3000
-TZ ='America/Sao_Paulo' // your timezone
+```js
+jest.setTimeout(1000);
+process.env.ENV = 'test';
+process.env.HELLO_WORD_URL = 'https://www.hello_word_url.com';
 
 ```
 

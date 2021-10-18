@@ -10,17 +10,24 @@ describe('HealthController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [HealthController],
-      providers: [HealthService, LoggerService],
+      providers: [
+        {
+          provide: HealthService,
+          useValue: {
+            getText: () => 'Hello Word!',
+          },
+        },
+        LoggerService,
+        Settings,
+      ],
     }).compile();
 
     appController = app.get<HealthController>(HealthController);
   });
 
   describe('getGealth', () => {
-    it(`should return "nestjs-boilerplate-api UP!!!"`, () => {
-      expect(appController.getHealth()).toBe(
-        new HealthService(new LoggerService(new Settings())).getText(),
-      );
+    it(`should return Hello Word!`, () => {
+      expect(appController.getHealth()).toBe('Hello Word!');
     });
   });
 });

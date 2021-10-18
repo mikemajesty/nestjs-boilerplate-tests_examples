@@ -1,20 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import { Settings } from '../../config/settings';
 import { AxiosService } from '../../utils/axios';
 import { LoggerService } from '../common/logger/service';
 
 @Injectable()
 export class HealthService extends AxiosService {
-  constructor(private loggerService: LoggerService) {
+  constructor(
+    private loggerService: LoggerService,
+    private settings: Settings,
+  ) {
     super();
   }
 
-  private text = 'nestjs-boilerplate-api UP!!!';
+  async getText(): Promise<string> {
+    const url = this.settings.HELLO_WORD_URL;
 
-  getText(): string {
+    const { data }: { data: { message: string } } = await this.axios.get(
+      `${url}/hello-world/hello/world`,
+    );
+
     this.loggerService.log(
-      this.text,
+      data.message,
       `${HealthService.name}/${this.getText.name}`,
     );
-    return this.text;
+
+    return data.message;
   }
 }

@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { v4 as uuidv4 } from 'uuid';
+
 @Injectable()
 export class ExceptionInterceptor implements NestInterceptor {
   intercept(ctx: ExecutionContext, next: CallHandler): Observable<unknown> {
