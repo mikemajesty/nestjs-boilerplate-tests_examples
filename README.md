@@ -60,7 +60,7 @@ $ yarn start:dev
 ```
 
 ```bash
-# production
+# dev/hml/prd environment
 $ docker-compose up --build
 ```
 
