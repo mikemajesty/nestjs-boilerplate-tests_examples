@@ -33,12 +33,12 @@ verify [CONTRIBUTING](./CONTRIBUTING.md)
 
 ## prerequisites
 
-- 1. create file
+1. create file
 ```bash
 $ touch .env
 ```
 
-- 2. add on file
+2. add on file
 ```bash
 ENV=dev
 PORT=3000
