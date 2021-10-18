@@ -5,10 +5,8 @@ verify [CONTRIBUTING](./CONTRIBUTING.md)
 ## Description
 
 [nest](https://docs.nestjs.com/) framework documentaion.
-
-[conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) framework documentaion
-
-[commitizen](https://github.com/commitizen/cz-cli) framework documentaion
+[conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) framework documentaion.
+[commitizen](https://github.com/commitizen/cz-cli) framework documentaion.
 
 ## Requirements
 
