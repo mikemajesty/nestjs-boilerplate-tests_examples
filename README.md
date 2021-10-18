@@ -80,7 +80,7 @@ $ yarn  test:coverage
 
 ## Usage
 
-1. throw error
+* throw error
 
 ```js
 import { ErrorRest } from 'utils/error';
@@ -92,7 +92,8 @@ throw new ErrorRest({
 
 ```
 
-1. logs
+
+* logs
 
 ```js
 import { LoggerService } from 'shared/logger/service';
@@ -103,13 +104,33 @@ export class Example {
   }
 
   example(): void {
-    this.loggerService.log('your text', Example.name); //Example.name: optional
+    this.loggerService.log(
+      this.text,
+      `${Example.name}/${this.example.name}`,
+    );
 
     this.loggerService.error(new ErrorRest({
       error: 'Error message',
       status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
     }));
   }
+}
+
+```
+
+
+* envs
+
+```js
+import { Settings } from 'config/settings';
+
+export class Example {
+  constructor(private settings: Settings) {
+  }
+
+  example(): void {
+    this.settings.ENV;
+  }    
 }
 
 ```

@@ -11,7 +11,10 @@ export class HealthService extends AxiosService {
   private text = 'nestjs-boilerplate-api UP!!!';
 
   getText(): string {
-    this.loggerService.log(this.text, HealthService.name);
+    this.loggerService.log(
+      this.text,
+      `${HealthService.name}/${this.getText.name}`,
+    );
     return this.text;
   }
 }
