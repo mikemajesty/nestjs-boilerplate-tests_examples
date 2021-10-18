@@ -103,7 +103,7 @@ export class Example {
   }
 
   example(): void {
-    this.loggerService.log('your text');
+    this.loggerService.log('your text', Example.name); //Example.name: optional
 
     this.loggerService.error(new ErrorRest({
       error: 'Error message',
