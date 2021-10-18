@@ -9,6 +9,7 @@ describe('LoggerService', () => {
     const settings = new Settings();
     settings.ENV = 'dev';
     loggerService = new LoggerService(settings);
+    loggerService.setContext('TestLog');
   });
 
   describe('error', () => {
