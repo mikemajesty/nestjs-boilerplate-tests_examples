@@ -1,17 +1,18 @@
-import { ConsoleLogger, Injectable, Scope } from '@nestjs/common';
-import { Settings } from '../../../config/settings';
+import { ConsoleLogger, Injectable } from '@nestjs/common';
 import { ErrorRest } from '../../../utils/error';
+import { SecretsService } from '../secrets/service';
+import { ILoggerService } from './adapter';
 
-@Injectable({ scope: Scope.TRANSIENT })
-export class LoggerService extends ConsoleLogger {
-  constructor(private settings: Settings) {
+@Injectable()
+export class LoggerService extends ConsoleLogger implements ILoggerService {
+  constructor(private readonly secrets: SecretsService) {
     super();
   }
   error(error: ErrorRest): void {
     const context = error.context || this.context;
     super.context = context;
 
-    if (this.settings.ENV !== 'test') {
+    if (this.secrets?.ENV !== 'test') {
       super.error({
         status: error.statusCode || error.code,
         traceId: error.uuid,

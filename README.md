@@ -43,7 +43,7 @@ $ touch .env
 ENV=dev
 PORT=3000
 TZ ='America/Sao_Paulo'
-HELLO_WORD_URL='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
+HELLO_WORD='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
 
 ```
 

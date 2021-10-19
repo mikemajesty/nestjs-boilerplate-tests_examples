@@ -2,12 +2,12 @@ import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import * as nock from 'nock';
 import * as request from 'supertest';
-import { Settings } from '../../../config/settings';
 import { AppModule } from '../../app.module';
+import { SecretsService } from '../../global/secrets/service';
 
 describe('HealthController (e2e)', () => {
   let app: INestApplication;
-  let settings: Settings;
+  let settings: SecretsService;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -15,14 +15,14 @@ describe('HealthController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    settings = new Settings();
+    settings = new SecretsService();
     await app.init();
   });
 
   describe('/health (GET)', () => {
     const text = 'Hello Word!';
     it(`should return ${text}`, async () => {
-      nock(settings.HELLO_WORD_URL).get('/').reply(200, {
+      nock(settings.url.HELLO_WORD).get('/').reply(200, {
         message: text,
       });
 

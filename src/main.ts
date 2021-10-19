@@ -1,10 +1,10 @@
 import { RequestMethod } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { Settings } from './config/settings';
 import { AppExceptionFilter } from './filters/http-exception.filter';
 import { ExceptionInterceptor } from './interceptors/http-exception.interceptor';
 import { AppModule } from './modules/app.module';
-import { LoggerService } from './modules/common/logger/service';
+import { LoggerService } from './modules/global/logger/service';
+import { SecretsService } from './modules/global/secrets/service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -14,14 +14,14 @@ async function bootstrap() {
   app.useGlobalFilters(new AppExceptionFilter());
   app.useGlobalInterceptors(new ExceptionInterceptor());
 
-  const loggingService = new LoggerService(new Settings());
+  const loggingService = new LoggerService(new SecretsService());
   app.useLogger(loggingService);
 
   app.setGlobalPrefix('api', {
     exclude: [{ path: 'health', method: RequestMethod.GET }],
   });
 
-  const { ENV, PORT } = new Settings();
+  const { ENV, PORT } = new SecretsService();
 
   loggingService.log(
     `API listening at ${PORT} on ${ENV.toUpperCase()} 🚀\n`,

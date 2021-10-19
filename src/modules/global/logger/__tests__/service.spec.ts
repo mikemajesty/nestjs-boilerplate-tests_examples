@@ -1,14 +1,23 @@
 import { HttpStatus } from '@nestjs/common';
-import { Settings } from '../../../../config/settings';
+import { Test } from '@nestjs/testing';
 import { ErrorRest } from '../../../../utils/error';
+import { ILoggerService } from '../adapter';
 import { LoggerService } from '../service';
+
 describe('LoggerService', () => {
-  let loggerService: LoggerService;
+  let loggerService: ILoggerService;
 
   beforeEach(async () => {
-    const settings = new Settings();
-    settings.ENV = 'dev';
-    loggerService = new LoggerService(settings);
+    const module = await Test.createTestingModule({
+      providers: [
+        {
+          provide: ILoggerService,
+          useClass: LoggerService,
+        },
+      ],
+    }).compile();
+
+    loggerService = module.get(ILoggerService);
     loggerService.setContext('TestLog');
   });
 

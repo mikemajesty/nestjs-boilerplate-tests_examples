@@ -1,7 +1,7 @@
 export enum Variables {
   ENV = 'ENV',
   PORT = 'PORT',
-  HELLO_WORD_URL = 'HELLO_WORD_URL',
+  HELLO_WORD = 'HELLO_WORD',
 }
 
 export abstract class Secrets {

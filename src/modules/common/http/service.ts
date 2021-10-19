@@ -1,12 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import axios, { Axios, AxiosRequestConfig } from 'axios';
-
-interface IHttpService<T> {
-  http: T;
-}
+import { IHttpService } from './adapter';
 
 @Injectable()
-export class HttpService implements IHttpService<Axios> {
+export class HttpService implements IHttpService {
   http: Axios;
 
   private defaultConfig: AxiosRequestConfig = {

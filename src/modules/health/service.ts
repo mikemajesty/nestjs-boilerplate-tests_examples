@@ -1,19 +1,20 @@
 import { Injectable } from '@nestjs/common';
-import { Settings } from '../../config/settings';
-import { HttpService } from '../common/http/service';
-import { LoggerService } from '../common/logger/service';
+import { IHttpService } from '../common/http/adapter';
+import { ILoggerService } from '../global/logger/adapter';
+import { ISecretsService } from '../global/secrets/adapter';
+import { IHealthService } from './adapter';
 
 @Injectable()
-export class HealthService {
+export class HealthService implements IHealthService {
   constructor(
-    private loggerService: LoggerService,
-    private settings: Settings,
-    private httpService: HttpService,
+    private readonly secretService: ISecretsService,
+    private readonly loggerService: ILoggerService,
+    private readonly httpService: IHttpService,
   ) {}
 
   async getText(): Promise<string> {
     const { data }: { data: { message: string } } =
-      await this.httpService.http.get(this.settings.HELLO_WORD_URL, {
+      await this.httpService.http.get(this.secretService.url.HELLO_WORD, {
         timeout: 2000,
       });
 
