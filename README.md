@@ -40,9 +40,10 @@ $ touch .env
 
 2. add on file
 ```js
-jest.setTimeout(1000);
-process.env.ENV = 'test';
-process.env.HELLO_WORD_URL = 'https://sandbox.api.service.nhs.uk';
+ENV=dev
+PORT=3000
+TZ ='America/Sao_Paulo'
+HELLO_WORD_URL='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
 
 ```
 

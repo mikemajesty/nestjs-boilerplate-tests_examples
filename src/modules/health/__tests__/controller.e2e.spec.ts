@@ -4,8 +4,6 @@ import * as nock from 'nock';
 import * as request from 'supertest';
 import { Settings } from '../../../config/settings';
 import { AppModule } from '../../app.module';
-import { LoggerService } from '../../common/logger/service';
-import { HealthService } from '../service';
 
 describe('HealthController (e2e)', () => {
   let app: INestApplication;
@@ -14,7 +12,6 @@ describe('HealthController (e2e)', () => {
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
-      providers: [HealthService, LoggerService, Settings],
     }).compile();
 
     app = moduleFixture.createNestApplication();
