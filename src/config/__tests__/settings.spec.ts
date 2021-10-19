@@ -1,6 +1,6 @@
 import { Settings } from '../settings';
 
-describe('[config/settings]', () => {
+describe('Settings', () => {
   let settings: Settings;
 
   beforeEach(() => {

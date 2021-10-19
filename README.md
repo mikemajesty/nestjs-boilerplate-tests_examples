@@ -106,7 +106,7 @@ export class Example {
   example(): void {
     this.loggerService.log(
       this.text,
-      `${Example.name}/${this.example.name}`,
+      `${Example.name}/${this.example.name}`, //Context log, used to better log vizualization 
     );
 
     this.loggerService.error(new ErrorRest({

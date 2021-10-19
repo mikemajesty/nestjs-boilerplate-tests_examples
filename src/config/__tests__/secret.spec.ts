@@ -2,7 +2,7 @@ import { Secrets, Variables } from '../secrets';
 
 class SecretsStub extends Secrets {}
 
-describe('[config/secrets]', () => {
+describe('Secrets', () => {
   let secretsStub: SecretsStub;
 
   beforeEach(() => {
