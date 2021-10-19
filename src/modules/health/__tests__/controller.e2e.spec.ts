@@ -22,13 +22,14 @@ describe('HealthController (e2e)', () => {
     await app.init();
   });
 
-  describe('/health (GET) ', () => {
-    it('should return Hello Word!', async () => {
-      nock(settings.HELLO_WORD_URL).get('/hello-world/hello/world').reply(200, {
-        message: 'Hello Word!!',
+  describe('/health (GET)', () => {
+    const text = 'Hello Word!';
+    it(`should return ${text}`, async () => {
+      nock(settings.HELLO_WORD_URL).get('/').reply(200, {
+        message: text,
       });
 
-      return request(app.getHttpServer()).get('/health').expect('Hello Word!!');
+      return request(app.getHttpServer()).get('/health').expect(text);
     });
   });
 });

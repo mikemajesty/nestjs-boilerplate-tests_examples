@@ -13,10 +13,8 @@ export class HealthService extends AxiosService {
   }
 
   async getText(): Promise<string> {
-    const url = this.settings.HELLO_WORD_URL;
-
     const { data }: { data: { message: string } } = await this.axios.get(
-      `${url}/hello-world/hello/world`,
+      this.settings.HELLO_WORD_URL,
     );
 
     this.loggerService.log(
