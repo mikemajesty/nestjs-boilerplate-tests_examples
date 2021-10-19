@@ -4,6 +4,8 @@ import { LoggerService } from '../../common/logger/service';
 import { HealthController } from '../controller';
 import { HealthService } from '../service';
 
+const text = 'Hello Word!';
+
 describe('HealthController', () => {
   let appController: HealthController;
 
@@ -14,7 +16,7 @@ describe('HealthController', () => {
         {
           provide: HealthService,
           useValue: {
-            getText: () => 'Hello Word!',
+            getText: () => text,
           },
         },
         LoggerService,
@@ -26,8 +28,8 @@ describe('HealthController', () => {
   });
 
   describe('getGealth', () => {
-    it(`should return Hello Word!`, () => {
-      expect(appController.getHealth()).toBe('Hello Word!');
+    it(`should return ${text}`, () => {
+      expect(appController.getHealth()).toBe(text);
     });
   });
 });
