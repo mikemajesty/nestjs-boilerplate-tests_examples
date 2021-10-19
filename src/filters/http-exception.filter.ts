@@ -3,7 +3,7 @@ import {
   Catch,
   ExceptionFilter,
   HttpException,
-  HttpStatus
+  HttpStatus,
 } from '@nestjs/common';
 import * as moment from 'moment';
 import { LoggerService } from '../modules/global/logger/service';
