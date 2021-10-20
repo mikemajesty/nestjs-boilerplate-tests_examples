@@ -16,14 +16,16 @@ verify [CONTRIBUTING](./CONTRIBUTING.md)
 - [docker-compose]
 - [yarn]
 - [NVM]
-  * Node >=14 <=15
+   * Node >=14 <=15
 
 ## Architecture
 
 - `src/main.ts`: Application entry point.
-- `src/config/`: Application setup for settings and environment variables.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
-- `src/modules/common/`: Utilities for the application that will necessarily be used only within the modules.
+- `src/modules/common/`: Common modules that used for two or many modules.
+- `src/modules/common/**/adpater.ts`: Used to communicated with controller and others moduels. Controllers and Modules must communicated with abstraction, not implementation.
+- `src/modules/global/`: Globals modules that is visibles for all modules.
+- `src/modules/global/secrets`: Modules settings and environment variables.
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
 - `src/filters/`: Exception Filters are called after the route handler and after the interceptors. They are the last place to make changes before a response goes out.
 - `src/interceptors/`: Application interceptors.
@@ -97,23 +99,24 @@ throw new ErrorRest({
 * logs
 
 ```js
-import { LoggerService } from 'shared/logger/service';
-import { ErrorRest } from 'utils/error';
+import { ILoggerService } from '../global/logger/adapter';
 
 export class Example {
-  constructor(private loggerService: LoggerService) {
-  }
+  constructor(
+    private readonly loggerService: ILoggerService,
+  ) {}
 
-  example(): void {
+  async example(): void {
     this.loggerService.log(
-      this.text,
-      `${Example.name}/${this.example.name}`, //Context log, used to better log vizualization 
+      data.message,
+      `${Example.name}/${this.example.name}`,// log context
     );
 
     this.loggerService.error(new ErrorRest({
       error: 'Error message',
       status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
     }));
+
   }
 }
 
@@ -123,16 +126,19 @@ export class Example {
 * envs
 
 ```js
-import { Settings } from 'config/settings';
+import { ISecretsService } from '../global/secrets/adapter';
 
+@Injectable()
 export class Example {
-  constructor(private settings: Settings) {
-  }
+  constructor(
+    private readonly secretService: ISecretsService,
+  ) {}
 
-  example(): void {
-    this.settings.ENV;
-  }    
+  async example(): void {
+    this.secretService.url.HELLO_WORD;
+  }
 }
+
 
 ```
 
