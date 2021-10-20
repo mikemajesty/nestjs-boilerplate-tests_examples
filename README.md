@@ -23,7 +23,7 @@ verify [CONTRIBUTING](./CONTRIBUTING.md)
 - `src/main.ts`: Application entry point.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
 - `src/modules/common/`: Common modules that used for two or many modules.
-- `src/modules/common/**/adpater.ts`: Used to communicated with controller and others moduels. Controllers and Modules must communicated with abstraction, not implementation.
+- `src/modules/common/**/adpater.ts`: Used to communicated with controller and others modules. Controllers and Modules must communicated with abstraction, not implementation.
 - `src/modules/global/`: Globals modules that is visibles for all modules.
 - `src/modules/global/secrets`: Modules settings and environment variables.
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
