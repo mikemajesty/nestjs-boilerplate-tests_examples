@@ -7,7 +7,7 @@ import { SecretsService } from '../../global/secrets/service';
 
 describe('HealthController (e2e)', () => {
   let app: INestApplication;
-  let settings: SecretsService;
+  let secrets: SecretsService;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -15,14 +15,14 @@ describe('HealthController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    settings = new SecretsService();
+    secrets = new SecretsService();
     await app.init();
   });
 
   describe('/health (GET)', () => {
     const text = 'Hello Word!';
     it(`should return ${text}`, async () => {
-      nock(settings.url.HELLO_WORD).get('/').reply(200, {
+      nock(secrets.url.HELLO_WORD).get('/').reply(200, {
         message: text,
       });
 

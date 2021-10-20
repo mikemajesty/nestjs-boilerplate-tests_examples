@@ -2,8 +2,8 @@ import { Test } from '@nestjs/testing';
 import { ISecretsService } from '../adapter';
 import { SecretsService } from '../service';
 
-describe('Settings', () => {
-  let settings: ISecretsService;
+describe('SecretsService', () => {
+  let secrets: ISecretsService;
 
   beforeEach(async () => {
     const app = await Test.createTestingModule({
@@ -15,14 +15,14 @@ describe('Settings', () => {
       ],
     }).compile();
 
-    settings = app.get(ISecretsService);
+    secrets = app.get(ISecretsService);
   });
 
-  describe('Settings', () => {
-    test('should Settings successfully', () => {
-      expect(settings.ENV).toEqual('test');
-      expect(settings.PORT).toEqual(3000);
-      expect(settings.url.HELLO_WORD).toEqual('https://www.hello_word_url.com');
+  describe('SecretsService', () => {
+    test('should secrets successfully', () => {
+      expect(secrets.ENV).toEqual('test');
+      expect(secrets.PORT).toEqual(3000);
+      expect(secrets.url.HELLO_WORD).toEqual('https://www.hello_word_url.com');
     });
   });
 });
