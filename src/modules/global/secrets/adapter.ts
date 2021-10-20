@@ -1,7 +1,7 @@
 export abstract class ISecretsService {
-  ENV: string;
-  PORT: string | number;
+  ENV: string | null;
+  PORT: number | null;
   url: {
-    HELLO_WORD: string;
+    HELLO_WORD_SERVICE: string;
   };
 }

@@ -14,9 +14,12 @@ export class HealthService implements IHealthService {
 
   async getText(): Promise<string> {
     const { data }: { data: { message: string } } =
-      await this.httpService.http.get(this.secretService.url.HELLO_WORD, {
-        timeout: 2000,
-      });
+      await this.httpService.http.get(
+        this.secretService.url.HELLO_WORD_SERVICE,
+        {
+          timeout: 2000,
+        },
+      );
 
     this.loggerService.log(
       data.message,

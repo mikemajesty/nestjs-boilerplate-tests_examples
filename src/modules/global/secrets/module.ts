@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SecretsService } from './service';
-
 @Module({
-  providers: [SecretsService],
+  imports: [ConfigModule.forRoot({ envFilePath: '.env' })],
+  providers: [SecretsService, ConfigService],
 })
 export class SecretsModule {}

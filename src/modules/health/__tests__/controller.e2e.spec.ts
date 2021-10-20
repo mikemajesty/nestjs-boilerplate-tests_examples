@@ -3,26 +3,33 @@ import { Test, TestingModule } from '@nestjs/testing';
 import * as nock from 'nock';
 import * as request from 'supertest';
 import { AppModule } from '../../app.module';
+import { ISecretsService } from '../../global/secrets/adapter';
 import { SecretsService } from '../../global/secrets/service';
 
 describe('HealthController (e2e)', () => {
   let app: INestApplication;
-  let secrets: SecretsService;
+  let secrets: ISecretsService;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
+      providers: [
+        {
+          provide: ISecretsService,
+          useClass: SecretsService,
+        },
+      ],
       imports: [AppModule],
     }).compile();
 
+    secrets = moduleFixture.get(ISecretsService);
     app = moduleFixture.createNestApplication();
-    secrets = new SecretsService();
     await app.init();
   });
 
   describe('/health (GET)', () => {
     const text = 'Hello Word!';
     it(`should return ${text}`, async () => {
-      nock(secrets.url.HELLO_WORD).get('/').reply(200, {
+      nock(secrets.url.HELLO_WORD_SERVICE).get('/').reply(200, {
         message: text,
       });
 

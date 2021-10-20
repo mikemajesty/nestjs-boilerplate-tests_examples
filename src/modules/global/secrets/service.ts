@@ -1,12 +1,22 @@
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { ISecretsService } from './adapter';
-import { Secrets, Variables } from './secrets';
+
+export enum Variables {
+  ENV = 'ENV',
+  PORT = 'PORT',
+  HELLO_WORD_SERVICE = 'HELLO_WORD_SERVICE',
+}
 
 @Injectable()
-export class SecretsService extends Secrets implements ISecretsService {
-  ENV = this.getEnv(Variables.ENV);
-  PORT = this.getEnv(Variables.PORT) || 3000;
+export class SecretsService implements ISecretsService {
+  private configService: ConfigService = new ConfigService();
+
+  ENV = this.configService.get<string>(Variables.ENV);
+  PORT = this.configService.get<number>(Variables.PORT) || 3000;
   url = {
-    HELLO_WORD: this.getEnv(Variables.HELLO_WORD),
+    HELLO_WORD_SERVICE: this.configService.get<string>(
+      Variables.HELLO_WORD_SERVICE,
+    ),
   };
 }

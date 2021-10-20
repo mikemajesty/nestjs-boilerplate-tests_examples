@@ -24,7 +24,7 @@ async function bootstrap() {
   const { ENV, PORT } = new SecretsService();
 
   loggingService.log(
-    `API listening at ${PORT} on ${ENV.toUpperCase()} 🚀\n`,
+    `API listening at ${PORT} on ${ENV?.toUpperCase()} 🚀\n`,
     'Started....',
   );
 
