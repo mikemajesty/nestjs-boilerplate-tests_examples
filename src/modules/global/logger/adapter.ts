@@ -1,7 +1,10 @@
-import { ErrorRest } from 'utils/error';
+import { AppException } from '../../../utils/error';
 
 export abstract class ILoggerService {
   abstract setContext(context: string): void;
-  abstract error(errorRest: ErrorRest): void;
+  abstract error(exception: AppException): void;
   abstract log(message: string, context?: string): void;
+  abstract debug(message: string, context?: string): void;
+  abstract warn(message: string, context?: string): void;
+  abstract verbose(message: string, context?: string): void;
 }

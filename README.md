@@ -1,6 +1,6 @@
 # NestJs boilerplate API
 
-verify [CONTRIBUTING](./CONTRIBUTING.md)
+Check the [contributing manual](./CONTRIBUTING.md)
 
 ## Description
 
@@ -86,9 +86,9 @@ $ yarn  test:coverage
 * throw error
 
 ```js
-import { ErrorRest } from 'utils/error';
+import { AppException } from 'utils/error';
 
-throw new ErrorRest({
+throw new AppException({
       error: 'Error message',
       status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
     });

@@ -1,5 +1,5 @@
 import { ConsoleLogger, Injectable } from '@nestjs/common';
-import { ErrorRest } from '../../../utils/error';
+import { AppException } from '../../../utils/error';
 import { SecretsService } from '../secrets/service';
 import { ILoggerService } from './adapter';
 
@@ -8,7 +8,7 @@ export class LoggerService extends ConsoleLogger implements ILoggerService {
   constructor(private readonly secrets: SecretsService) {
     super();
   }
-  error(error: ErrorRest): void {
+  error(error: AppException): void {
     const context = error.context || this.context;
     super.context = context;
 

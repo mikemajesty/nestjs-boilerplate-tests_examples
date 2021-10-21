@@ -9,10 +9,10 @@ import * as moment from 'moment';
 import { LoggerService } from '../modules/global/logger/service';
 import { SecretsService } from '../modules/global/secrets/service';
 import * as errorStatus from '../static/status.json';
-import { ErrorRest } from '../utils/error';
+import { AppException } from '../utils/error';
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {
-  catch(exception: ErrorRest, host: ArgumentsHost): void {
+  catch(exception: AppException, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest<Request>();

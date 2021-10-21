@@ -14,8 +14,8 @@ async function bootstrap() {
   app.useGlobalFilters(new AppExceptionFilter());
   app.useGlobalInterceptors(new ExceptionInterceptor());
 
-  const loggingService = new LoggerService(new SecretsService());
-  app.useLogger(loggingService);
+  const loggerService = new LoggerService(new SecretsService());
+  app.useLogger(loggerService);
 
   app.setGlobalPrefix('api', {
     exclude: [{ path: 'health', method: RequestMethod.GET }],
@@ -23,7 +23,7 @@ async function bootstrap() {
 
   const { ENV, PORT } = new SecretsService();
 
-  loggingService.log(
+  loggerService.log(
     `API listening at ${PORT} on ${ENV?.toUpperCase()} 🚀\n`,
     'Started....',
   );
