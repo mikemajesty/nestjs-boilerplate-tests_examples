@@ -1,15 +1,15 @@
 {
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.organizeImports": true
   },
+  "editor.formatOnSave": true,
   "eslint.validate": ["javascript"],
   "files.exclude": {
     "**/.git": true,
     "**/*lock*": true,
     "**/*bin*": true,
-    "**/*coverage*": true,
+    "**/*coverage*": true
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {

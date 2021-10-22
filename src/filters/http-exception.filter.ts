@@ -10,6 +10,7 @@ import { LoggerService } from '../modules/global/logger/service';
 import { SecretsService } from '../modules/global/secrets/service';
 import * as errorStatus from '../static/status.json';
 import { AppException } from '../utils/error';
+
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {
   catch(exception: AppException, host: ArgumentsHost): void {
