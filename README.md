@@ -16,7 +16,7 @@ Check the [contributing manual](./CONTRIBUTING.md)
 - [docker-compose]
 - [yarn]
 - [NVM]
-   * Node >=14 <=15
+  - Node >=14 <=15
 
 ## Architecture
 
@@ -27,8 +27,6 @@ Check the [contributing manual](./CONTRIBUTING.md)
 - `src/modules/global/`: Globals modules that is visibles for all modules.
 - `src/modules/global/secrets`: Modules settings and environment variables.
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
-- `src/filters/`: Exception Filters are called after the route handler and after the interceptors. They are the last place to make changes before a response goes out.
-- `src/interceptors/`: Application interceptors.
 - `src/static/`: Application static files like JSON, CSV etc.
 - `src/static/status.json`: Error message that will show to user accordind to status.
 - `src/test/jest-init.ts`: Test startup settings like envs and mocks.
@@ -36,17 +34,19 @@ Check the [contributing manual](./CONTRIBUTING.md)
 ## prerequisites
 
 1. create file
+
 ```bash
 $ touch .env
 ```
 
 2. add on file
-```js
-ENV=dev
-PORT=3000
-TZ ='America/Sao_Paulo'
-HELLO_WORD_SERVICE='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
 
+```js
+ENV = dev;
+PORT = 3000;
+TZ = 'America/Sao_Paulo';
+HELLO_WORD_SERVICE =
+  'https://sandbox.api.service.nhs.uk/hello-world/hello/world';
 ```
 
 ## Installation
@@ -80,23 +80,20 @@ $ yarn  test:e2e
 $ yarn  test:coverage
 ```
 
-
 ## Usage
 
-* throw error
+- throw error
 
 ```js
 import { AppException } from 'utils/error';
 
 throw new AppException({
-      error: 'Error message',
-      status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
-    });
-
+  error: 'Error message',
+  status: HttpStatus.INTERNAL_SERVER_ERROR, //optional
+});
 ```
 
-
-* logs
+- logs
 
 ```js
 import { ILoggerService } from '../global/logger/adapter';
@@ -122,8 +119,7 @@ export class Example {
 
 ```
 
-
-* envs
+- envs
 
 ```js
 import { ISecretsService } from '../global/secrets/adapter';
@@ -145,8 +141,8 @@ export class Example {
 The following is a list of all the people that have contributed to nest-boilerplate. Thanks for your contributions!
 
 [<img alt="mikemajesty" src="https://avatars1.githubusercontent.com/u/11630212?s=460&v=4&s=117" width="117">](https://github.com/mikemajesty)
+
 ## License
 
 It is available under the MIT license.
 [License](https://opensource.org/licenses/mit-license.php)
-
