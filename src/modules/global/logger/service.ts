@@ -1,17 +1,16 @@
 import { ConsoleLogger, Injectable } from '@nestjs/common';
 import { AppException } from '../../../utils/error';
-import { SecretsService } from '../secrets/service';
+import { ISecretsService } from '../secrets/adapter';
 import { ILoggerService } from './adapter';
 
 @Injectable()
 export class LoggerService extends ConsoleLogger implements ILoggerService {
-  constructor(private readonly secrets: SecretsService) {
+  constructor(private readonly secrets: ISecretsService) {
     super();
   }
   error(error: AppException): void {
     const context = error.context || this.context;
     super.context = context;
-
     if (this.secrets?.ENV !== 'test') {
       super.error({
         status: error.statusCode || error.code,
