@@ -14,14 +14,14 @@ async function bootstrap() {
   app.useGlobalFilters(new AppExceptionFilter());
   app.useGlobalInterceptors(new ExceptionInterceptor());
 
-  const loggerService = new LoggerService(new SecretsService());
+  const { ENV, PORT } = new SecretsService();
+
+  const loggerService = new LoggerService(ENV);
   app.useLogger(loggerService);
 
   app.setGlobalPrefix('api', {
     exclude: [{ path: 'health', method: RequestMethod.GET }],
   });
-
-  const { ENV, PORT } = new SecretsService();
 
   loggerService.log(
     `API listening at ${PORT} on ${ENV?.toUpperCase()} 🚀\n`,

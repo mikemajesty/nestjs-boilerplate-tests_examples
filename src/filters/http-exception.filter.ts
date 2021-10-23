@@ -23,7 +23,7 @@ export class AppExceptionFilter implements ExceptionFilter {
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    new LoggerService(new SecretsService()).error(exception);
+    new LoggerService(new SecretsService().ENV).error(exception);
 
     const code = [
       exception.code,
