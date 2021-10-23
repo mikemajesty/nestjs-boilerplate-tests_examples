@@ -20,6 +20,7 @@ Check the [contributing manual](./CONTRIBUTING.md)
 
 ## Architecture
 
+- `/jest/init.ts`: Test startup settings like envs and mocks.
 - `src/main.ts`: Application entry point.
 - `src/modules/`: Application modules, may contain; services, controller, repositories and etc.
 - `src/modules/common/`: Common modules that used for two or many modules.
@@ -29,7 +30,6 @@ Check the [contributing manual](./CONTRIBUTING.md)
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
 - `src/static/`: Application static files like JSON, CSV etc.
 - `src/static/status.json`: Error message that will show to user accordind to status.
-- `src/test/jest-init.ts`: Test startup settings like envs and mocks.
 
 ## prerequisites
 
