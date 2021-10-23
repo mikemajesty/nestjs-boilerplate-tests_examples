@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-nest",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NestJs boilerplate",
   "author": {
     "name": "Mike Lima",
@@ -30,7 +30,8 @@
     "test:coverage": "jest --coverage && xdg-open ./coverage/lcov-report/index.html",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./jest-e2e.json",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "tag:production": "changelog generate && cd devops && bash ./tag-create.sh && cd .."
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
