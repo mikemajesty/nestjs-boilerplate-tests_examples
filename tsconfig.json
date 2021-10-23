@@ -10,6 +10,9 @@
     "target": "es2017",
     "sourceMap": true,
     "baseUrl": "./",
+    "paths": {
+      "*": ["*"]
+    },
     "rootDir": "./",
     "outDir": "bin/",
     "allowJs": false,

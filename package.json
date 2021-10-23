@@ -92,7 +92,7 @@
       "./src/main.ts"
     ],
     "setupFilesAfterEnv": [
-      "../jest/init.ts"
+      "../src/jest/init.ts"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
