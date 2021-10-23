@@ -16,4 +16,4 @@ yarn-error.log*
 /.nyc_output
 
 # env
-develop.env
+.env
