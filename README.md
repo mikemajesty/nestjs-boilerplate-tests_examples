@@ -41,12 +41,11 @@ $ touch .env
 
 2. add on file
 
-```js
-ENV = dev;
-PORT = 3000;
-TZ = 'America/Sao_Paulo';
-HELLO_WORD_SERVICE =
-  'https://sandbox.api.service.nhs.uk/hello-world/hello/world';
+```bash
+ENV = dev
+PORT = 3000
+TZ = 'America/Sao_Paulo'
+HELLO_WORD_SERVICE = 'https://sandbox.api.service.nhs.uk/hello-world/hello/world'
 ```
 
 ## Installation
