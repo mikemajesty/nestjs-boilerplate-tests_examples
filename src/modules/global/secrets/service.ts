@@ -21,13 +21,14 @@ export class SecretsService extends ConfigService implements ISecretsService {
 
   ENV = this.get<string>(Variables.ENV);
   PORT = this.get<number>(Variables.PORT) || 3000;
+  IS_NOT_PRODUCTION = this.get<string>(Variables.ENV) !== 'prd';
 
   db = {
-    TYPE: this.get(Variables.DB_TYPE),
-    HOST: this.get(Variables.DB_HOST),
-    USERNAME: this.get(Variables.DB_USERNAME),
-    PASSWORD: this.get(Variables.DB_PASSWORD),
-    DATABASE: this.get(Variables.DB_DATABASE),
+    TYPE: this.get<string>(Variables.DB_TYPE),
+    HOST: this.get<string>(Variables.DB_HOST),
+    USERNAME: this.get<string>(Variables.DB_USERNAME),
+    PASSWORD: this.get<string>(Variables.DB_PASSWORD),
+    DATABASE: this.get<string>(Variables.DB_DATABASE),
   };
 
   url = {

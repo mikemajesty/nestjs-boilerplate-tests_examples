@@ -4,15 +4,16 @@ export WORKING_DIR=../
 
 git checkout master
 
-nextVersion=$(npm --no-git-tag-version version patch)
+NODE_VERSION=$(node -p -e "require('../package.json').version")
 
 NAME=nest-boilerplate
 
 CURRENT_TIMESTAMP=$(date '+%Y.%m.%d.%H.%M.%S')
-TAG_NAME=$NAME-$ENVIROMENT-$nextVersion-$CURRENT_TIMESTAMP
+TAG_NAME=$NAME-$ENVIROMENT-$NODE_VERSION-$CURRENT_TIMESTAMP
 
 echo "Creating production tag '${TAG_NAME}'..."
 
+nextVersion=$(npm --no-git-tag-version version patch)
 git add $WORKING_DIR/package.json
 git add $WORKING_DIR/CHANGELOG.md
 git commit -m "feat(release): add production version '${TAG_NAME}'"

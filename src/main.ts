@@ -1,4 +1,4 @@
-import { RequestMethod } from '@nestjs/common';
+import { HttpStatus, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppExceptionFilter } from './filters/http-exception.filter';
 import { ExceptionInterceptor } from './interceptors/http-exception.interceptor';
@@ -11,6 +11,9 @@ async function bootstrap() {
     bufferLogs: true,
   });
 
+  app.useGlobalPipes(
+    new ValidationPipe({ errorHttpStatusCode: HttpStatus.PRECONDITION_FAILED }),
+  );
   app.useGlobalFilters(new AppExceptionFilter());
   app.useGlobalInterceptors(new ExceptionInterceptor());
 

@@ -32,4 +32,17 @@ describe('ExceptionInterceptor', () => {
 
     expect(result).not.toBeUndefined();
   });
+
+  test('should catch successfully with status 412', async () => {
+    const mock = jest.genMockFromModule<Observable<unknown>>('rxjs');
+    jest.spyOn(mock, 'pipe').mockReturnValue(of(true));
+    callHandlerMOck.handle = () => mock;
+
+    const result = exceptionInterceptor.intercept(
+      executionContextMock,
+      callHandlerMOck,
+    );
+
+    expect(result).not.toBeUndefined();
+  });
 });
