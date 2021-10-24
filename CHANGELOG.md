@@ -1,3 +1,17 @@
+#### 0.0.2 (2021-10-24)
+
+##### Build System / Dependencies
+
+* **devops:**  add tag script ([c71eace6](https://github.com/mikemajesty/nestjs-boilerplat/commit/c71eace69c42286f9b22e4a5fa361be7acb46554))
+
+##### Documentation Changes
+
+* **readme:**  improve env doc ([22da0ddc](https://github.com/mikemajesty/nestjs-boilerplat/commit/22da0ddc4029945a1dc2bcad5f61dd0dcb59ff0f))
+
+##### New Features
+
+* **global:**  add mysql connection ([d8d61d76](https://github.com/mikemajesty/nestjs-boilerplat/commit/d8d61d76ef10eb711afbcd5035b00da2f5273b2a))
+
 #### 0.0.1 (2021-10-23)
 
 ##### Build System / Dependencies
