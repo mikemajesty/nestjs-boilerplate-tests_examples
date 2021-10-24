@@ -1,4 +1,9 @@
-version: "2"
+version: '2'
+
+networks:
+  nestjs_boilerplate:
+    driver: bridge
+
 services:
   web:
     container_name: nestjs_boilerplate
@@ -6,8 +11,22 @@ services:
       context: .
       dockerfile: DockerfileLocal
     ports:
-      - "3000:3000"
-      - "5860:5860"
+      - '3000:3000'
+      - '5860:5860'
     env_file: .env
     volumes:
       - .:/src:cached
+    networks:
+      - nestjs_boilerplate
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    networks:
+      - nestjs_boilerplate
+volumes:
+  db_data:

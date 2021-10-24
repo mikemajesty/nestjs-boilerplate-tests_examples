@@ -6,6 +6,11 @@ export enum Variables {
   ENV = 'ENV',
   PORT = 'PORT',
   HELLO_WORD_SERVICE = 'HELLO_WORD_SERVICE',
+  DB_TYPE = 'DB_TYPE',
+  DB_HOST = 'DB_HOST',
+  DB_USERNAME = 'DB_USERNAME',
+  DB_PASSWORD = 'DB_PASSWORD',
+  DB_DATABASE = 'DB_DATABASE',
 }
 
 @Injectable()
@@ -16,6 +21,15 @@ export class SecretsService extends ConfigService implements ISecretsService {
 
   ENV = this.get<string>(Variables.ENV);
   PORT = this.get<number>(Variables.PORT) || 3000;
+
+  db = {
+    TYPE: this.get(Variables.DB_TYPE),
+    HOST: this.get(Variables.DB_HOST),
+    USERNAME: this.get(Variables.DB_USERNAME),
+    PASSWORD: this.get(Variables.DB_PASSWORD),
+    DATABASE: this.get(Variables.DB_DATABASE),
+  };
+
   url = {
     HELLO_WORD_SERVICE: this.get<string>(Variables.HELLO_WORD_SERVICE),
   };

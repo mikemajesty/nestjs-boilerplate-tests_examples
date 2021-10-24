@@ -4,4 +4,11 @@ export abstract class ISecretsService {
   url: {
     HELLO_WORD_SERVICE: string;
   };
+  db: {
+    TYPE: string;
+    HOST: string;
+    USERNAME: string;
+    PASSWORD: string;
+    DATABASE: string;
+  };
 }

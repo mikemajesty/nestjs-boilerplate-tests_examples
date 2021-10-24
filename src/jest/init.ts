@@ -1,4 +1,4 @@
-jest.setTimeout(1000);
+jest.setTimeout(2000);
 process.env.ENV = 'test';
 
 // url

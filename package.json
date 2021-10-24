@@ -38,11 +38,14 @@
     "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/typeorm": "^8.0.2",
     "axios": "^0.22.0",
     "moment": "^2.29.1",
+    "mysql2": "^2.3.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.4.0",
+    "typeorm": "^0.2.38",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -90,7 +93,8 @@
       "**/*.(t|j)s"
     ],
     "coveragePathIgnorePatterns": [
-      "./src/main.ts"
+      "./src/main.ts",
+      "./src/modules/app.module.ts"
     ],
     "setupFilesAfterEnv": [
       "../src/jest/init.ts"
