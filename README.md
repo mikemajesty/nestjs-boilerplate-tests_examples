@@ -4,7 +4,7 @@ Check the [contributing manual](./CONTRIBUTING.md)
 
 ## Description
 
-###### The best nestjs boilerplate using Anti-corruption Layer pattern secrets, logger, Mysql, Docker and unit tests
+##### The best nestjs boilerplate using Anti-corruption Layer pattern, secrets, logger, Mysql, Docker and unit tests
 
 [nest](https://docs.nestjs.com/) framework documentaion.
 
