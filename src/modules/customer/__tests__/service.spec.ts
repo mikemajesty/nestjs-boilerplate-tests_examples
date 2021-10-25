@@ -7,7 +7,7 @@ import { Customer } from '../entity';
 import { CustomerService } from '../service';
 
 describe('CustomerService', () => {
-  let customerRepository: ICustomerService<Customer>;
+  let service: ICustomerService<Customer>;
   let repository: Repository<Customer>;
 
   beforeEach(async () => {
@@ -24,19 +24,19 @@ describe('CustomerService', () => {
       ],
     }).compile();
 
-    customerRepository = module.get(ICustomerService);
+    service = module.get(ICustomerService);
     repository = module.get(getRepositoryToken(Customer));
   });
 
   describe('getAll', () => {
     test('should getAll successfully', async () => {
       repository.find = jest.fn().mockResolvedValue(true);
-      await expect(customerRepository.getAll()).resolves.toEqual(true);
+      await expect(service.getAll()).resolves.toEqual(true);
     });
 
     test('should getAll with throw Error', async () => {
       repository.find = jest.fn().mockRejectedValue(new AppException('Error'));
-      await expect(customerRepository.getAll()).rejects.toThrowError('Error');
+      await expect(service.getAll()).rejects.toThrowError('Error');
     });
   });
 
@@ -44,7 +44,7 @@ describe('CustomerService', () => {
     test('should delete successfully', async () => {
       repository.delete = jest.fn().mockResolvedValue(true);
       const idDummy = 1;
-      await expect(customerRepository.delete(idDummy)).resolves.toEqual(true);
+      await expect(service.delete(idDummy)).resolves.toEqual(true);
     });
 
     test('should delete with throw Error', async () => {
@@ -52,25 +52,19 @@ describe('CustomerService', () => {
         .fn()
         .mockRejectedValue(new AppException('Error'));
       const idDummy = 1;
-      await expect(customerRepository.delete(idDummy)).rejects.toThrowError(
-        'Error',
-      );
+      await expect(service.delete(idDummy)).rejects.toThrowError('Error');
     });
   });
 
   describe('save', () => {
     test('should save successfully', async () => {
       repository.save = jest.fn().mockResolvedValue(true);
-      await expect(customerRepository.save(new Customer())).resolves.toEqual(
-        true,
-      );
+      await expect(service.save(new Customer())).resolves.toEqual(true);
     });
 
     test('should save with throw Error', async () => {
       repository.save = jest.fn().mockRejectedValue(new AppException('Error'));
-      await expect(
-        customerRepository.save(new Customer()),
-      ).rejects.toThrowError('Error');
+      await expect(service.save(new Customer())).rejects.toThrowError('Error');
     });
   });
 
@@ -78,9 +72,9 @@ describe('CustomerService', () => {
     test('should update successfully', async () => {
       repository.update = jest.fn().mockResolvedValue(true);
       const idDummy = 1;
-      await expect(
-        customerRepository.update(idDummy, new Customer()),
-      ).resolves.toEqual(true);
+      await expect(service.update(idDummy, new Customer())).resolves.toEqual(
+        true,
+      );
     });
 
     test('should update with throw Error', async () => {
@@ -89,7 +83,7 @@ describe('CustomerService', () => {
         .mockRejectedValue(new AppException('Error'));
       const idDummy = 1;
       await expect(
-        customerRepository.update(idDummy, new Customer()),
+        service.update(idDummy, new Customer()),
       ).rejects.toThrowError('Error');
     });
   });

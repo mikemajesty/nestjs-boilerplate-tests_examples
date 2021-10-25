@@ -4,6 +4,8 @@ Check the [contributing manual](./CONTRIBUTING.md)
 
 ## Description
 
+###### The best nestjs boilerplate using Anti-corruption Layer pattern secrets, logger, Mysql, Docker and unit tests
+
 [nest](https://docs.nestjs.com/) framework documentaion.
 
 [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/) framework documentaion.
@@ -42,10 +44,19 @@ $ touch .env
 2. add on file
 
 ```bash
-ENV = dev
-PORT = 3000
-TZ = 'America/Sao_Paulo'
-HELLO_WORD_SERVICE = 'https://sandbox.api.service.nhs.uk/hello-world/hello/world'
+ENV=dev
+PORT=3000
+TZ='America/Sao_Paulo'
+
+# url
+HELLO_WORD_SERVICE='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
+
+# database
+DB_TYPE='mysql'
+DB_HOST='db'
+DB_USERNAME='root'
+DB_PASSWORD='admin'
+DB_DATABASE='customer'
 ```
 
 ## Installation

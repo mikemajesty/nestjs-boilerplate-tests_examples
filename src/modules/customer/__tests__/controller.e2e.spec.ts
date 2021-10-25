@@ -9,7 +9,7 @@ import { CustomerService } from '../service';
 
 describe('CustomerController (e2e)', () => {
   let app: INestApplication;
-  let repository: ICustomerService<Customer>;
+  let service: ICustomerService<Customer>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -30,7 +30,7 @@ describe('CustomerController (e2e)', () => {
     }).compile();
 
     app = module.createNestApplication();
-    repository = app.get(ICustomerService);
+    service = app.get(ICustomerService);
     await app.init();
   });
   describe('/customer (GET)', () => {
@@ -42,7 +42,7 @@ describe('CustomerController (e2e)', () => {
     });
 
     it('should getAll with throw error 400', async () => {
-      repository.getAll = jest
+      service.getAll = jest
         .fn()
         .mockRejectedValue(new AppException('Error', HttpStatus.BAD_REQUEST));
 
@@ -61,7 +61,7 @@ describe('CustomerController (e2e)', () => {
     });
 
     it('should save with throw error 412', async () => {
-      repository.save = jest
+      service.save = jest
         .fn()
         .mockRejectedValue(
           new AppException('Error', HttpStatus.PRECONDITION_FAILED),
@@ -82,7 +82,7 @@ describe('CustomerController (e2e)', () => {
     });
 
     it('should update with throw error 500', async () => {
-      repository.update = jest
+      service.update = jest
         .fn()
         .mockRejectedValue(
           new AppException('Error', HttpStatus.INTERNAL_SERVER_ERROR),
@@ -103,7 +103,7 @@ describe('CustomerController (e2e)', () => {
     });
 
     it('should delete with throw error 418', async () => {
-      repository.delete = jest
+      service.delete = jest
         .fn()
         .mockRejectedValue(new AppException('Error', HttpStatus.I_AM_A_TEAPOT));
 
