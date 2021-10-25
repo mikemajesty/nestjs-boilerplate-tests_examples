@@ -16,7 +16,7 @@ describe('HealthController (e2e)', () => {
   let secrets: ISecretsService;
 
   beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
+    const module: TestingModule = await Test.createTestingModule({
       controllers: [HealthController],
       providers: [
         {
@@ -35,8 +35,8 @@ describe('HealthController (e2e)', () => {
       imports: [],
     }).compile();
 
-    secrets = moduleFixture.get(ISecretsService);
-    app = moduleFixture.createNestApplication();
+    secrets = module.get(ISecretsService);
+    app = module.createNestApplication();
     await app.init();
   });
 
@@ -50,7 +50,7 @@ describe('HealthController (e2e)', () => {
       return request(app.getHttpServer()).get('/health').expect(text);
     });
 
-    it(`should throw statusCode 500`, async () => {
+    it(`should getHealth with throw statusCode 500`, async () => {
       nock(secrets.url.HELLO_WORD_SERVICE)
         .get('/')
         .replyWithError(new AppException('ERROR', 500));
@@ -59,5 +59,9 @@ describe('HealthController (e2e)', () => {
         .get('/health')
         .expect({ statusCode: 500 });
     });
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });

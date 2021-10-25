@@ -41,5 +41,11 @@ describe('LoggerService', () => {
       error.code = 'TIMEOUT';
       loggerService.error(error);
     });
+
+    test('should error successfully without dev env', () => {
+      const error = new AppException('Error', 500);
+      error.statusCode = undefined;
+      new LoggerService('dev').error(error);
+    });
   });
 });
