@@ -2,12 +2,12 @@ import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AppException } from '../../../utils/error';
-import { ICustomerRepository } from '../adapter';
+import { ICustomerService } from '../adapter';
 import { Customer } from '../entity';
 import { CustomerService } from '../service';
 
 describe('CustomerService', () => {
-  let customerRepository: ICustomerRepository<Customer>;
+  let customerRepository: ICustomerService<Customer>;
   let repository: Repository<Customer>;
 
   beforeEach(async () => {
@@ -18,13 +18,13 @@ describe('CustomerService', () => {
           useValue: {},
         },
         {
-          provide: ICustomerRepository,
+          provide: ICustomerService,
           useClass: CustomerService,
         },
       ],
     }).compile();
 
-    customerRepository = module.get(ICustomerRepository);
+    customerRepository = module.get(ICustomerService);
     repository = module.get(getRepositoryToken(Customer));
   });
 

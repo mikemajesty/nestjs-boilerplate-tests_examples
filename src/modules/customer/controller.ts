@@ -7,13 +7,13 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { ICustomerRepository } from './adapter';
+import { ICustomerService } from './adapter';
 import { Customer } from './entity';
 
 @Controller('/customer')
 export class CustomerController {
   constructor(
-    private readonly customerRepository: ICustomerRepository<Customer>,
+    private readonly customerRepository: ICustomerService<Customer>,
   ) {}
 
   @Get()

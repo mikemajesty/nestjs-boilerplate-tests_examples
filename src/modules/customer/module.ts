@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ICustomerRepository } from './adapter';
+import { ICustomerService } from './adapter';
 import { CustomerController } from './controller';
 import { Customer } from './entity';
 import { CustomerService } from './service';
@@ -10,7 +10,7 @@ import { CustomerService } from './service';
   controllers: [CustomerController],
   providers: [
     {
-      provide: ICustomerRepository,
+      provide: ICustomerService,
       useClass: CustomerService,
     },
   ],

@@ -2,21 +2,21 @@ import { HttpStatus, INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { AppException } from '../../../utils/error';
-import { ICustomerRepository } from '../adapter';
+import { ICustomerService } from '../adapter';
 import { CustomerController } from '../controller';
 import { Customer } from '../entity';
 import { CustomerService } from '../service';
 
 describe('CustomerController (e2e)', () => {
   let app: INestApplication;
-  let repository: ICustomerRepository<Customer>;
+  let repository: ICustomerService<Customer>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CustomerController],
       providers: [
         {
-          provide: ICustomerRepository,
+          provide: ICustomerService,
           useFactory: (
             repository = {
               find: () => true,
@@ -30,7 +30,7 @@ describe('CustomerController (e2e)', () => {
     }).compile();
 
     app = module.createNestApplication();
-    repository = app.get(ICustomerRepository);
+    repository = app.get(ICustomerService);
     await app.init();
   });
   describe('/customer (GET)', () => {
