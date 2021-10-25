@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+
 import { DataBaseModule } from './common/database/module';
 import { CustomerModule } from './customer/module';
 import { GlobalModule } from './global/global.module';
