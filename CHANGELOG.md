@@ -1,3 +1,17 @@
+#### 0.0.3 (2021-10-25)
+
+##### New Features
+
+* **customer:**  add crud ([27be6b88](https://github.com/mikemajesty/nestjs-boilerplat/commit/27be6b886fba8856459a1dd8b24c37d249c0cb15))
+
+##### Refactors
+
+* **customer:**  change service name ([1ae47986](https://github.com/mikemajesty/nestjs-boilerplat/commit/1ae479862ebbafa5547d77ccda3068e8ced7aad4))
+
+##### Tests
+
+* **customer:**  add tests ([5d5c298f](https://github.com/mikemajesty/nestjs-boilerplat/commit/5d5c298fd545b0d0a9c70ff7242aaaaaa9483bbe))
+
 #### 0.0.2 (2021-10-24)
 
 ##### Build System / Dependencies
