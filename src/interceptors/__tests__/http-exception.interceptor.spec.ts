@@ -2,6 +2,7 @@ import { ExecutionContext } from '@nestjs/common';
 import { CallHandler } from '@nestjs/common/interfaces';
 import { Test } from '@nestjs/testing';
 import { Observable, of } from 'rxjs';
+
 import { ExceptionInterceptor } from '../http-exception.interceptor';
 
 const executionContextMock =

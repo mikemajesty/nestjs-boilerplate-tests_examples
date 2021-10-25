@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-      - "5860:5860"
+      - "5870:5870"
     env_file: .env
     volumes:
       - .:/src:cached

@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { LoggerModule } from '../module';
 
 describe('LoggerModule', () => {

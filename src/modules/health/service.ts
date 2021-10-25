@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { IHttpService } from '../common/http/adapter';
 import { ILoggerService } from '../global/logger/adapter';
 import { ISecretsService } from '../global/secrets/adapter';

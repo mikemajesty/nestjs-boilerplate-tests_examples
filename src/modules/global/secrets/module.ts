@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+
 import { ISecretsService } from './adapter';
 import { SecretsService } from './service';
 @Module({

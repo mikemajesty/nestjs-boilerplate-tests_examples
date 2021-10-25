@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+
 import { IHttpService } from './adapter';
 import { HttpService } from './service';
 

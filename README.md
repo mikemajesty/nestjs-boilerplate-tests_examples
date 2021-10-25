@@ -52,7 +52,6 @@ TZ='America/Sao_Paulo'
 HELLO_WORD_SERVICE='https://sandbox.api.service.nhs.uk/hello-world/hello/world'
 
 # database
-DB_TYPE='mysql'
 DB_HOST='db'
 DB_USERNAME='root'
 DB_PASSWORD='admin'
@@ -88,6 +87,14 @@ $ yarn  test:e2e
 
 # test coverage
 $ yarn  test:coverage
+```
+
+## Migrations
+
+```bash
+# create migration
+yarn migration --name=<migrationname>
+
 ```
 
 ## Usage

@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { ICustomerService } from './adapter';
 import { CustomerController } from './controller';
 import { Customer } from './entity';
@@ -14,5 +15,6 @@ import { CustomerService } from './service';
       useClass: CustomerService,
     },
   ],
+  exports: [ICustomerService],
 })
 export class CustomerModule {}

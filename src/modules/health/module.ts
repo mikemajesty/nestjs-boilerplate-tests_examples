@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+
 import { HttpModule } from '../common/http/module';
 import { IHealthService } from './adapter';
 import { HealthController } from './controller';

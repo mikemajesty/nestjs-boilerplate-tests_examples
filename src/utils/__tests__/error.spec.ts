@@ -1,4 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
+
 import { AppException } from '../error';
 
 describe('AppException', () => {

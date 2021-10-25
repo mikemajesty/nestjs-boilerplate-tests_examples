@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.fixAll": true
   },
   "editor.formatOnSave": true,
   "eslint.validate": ["javascript"],
@@ -13,7 +13,7 @@
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.fixAll": true
     }
   }
 }

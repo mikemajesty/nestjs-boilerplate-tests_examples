@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { SecretsModule } from '../module';
 
 describe('SecretsModule', () => {

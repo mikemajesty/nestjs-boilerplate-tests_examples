@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+
 import { ILoggerService } from './adapter';
 import { LoggerService } from './service';
 

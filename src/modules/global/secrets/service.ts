@@ -21,7 +21,6 @@ export class SecretsService extends ConfigService implements ISecretsService {
 
   ENV = this.get<string>(Variables.ENV);
   PORT = this.get<number>(Variables.PORT) || 3000;
-  IS_NOT_PRODUCTION = this.get<string>(Variables.ENV) !== 'prd';
 
   db = {
     TYPE: this.get<string>(Variables.DB_TYPE),

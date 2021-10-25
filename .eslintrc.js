@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
+  plugins: ['simple-import-sort'],
   root: true,
   env: {
     node: true,
@@ -19,6 +20,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/no-explicit-any": ["error"],
     "no-console": ["error"],
-    "complexity": ["error", 6]
+    "complexity": ["error", 6],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
 };
