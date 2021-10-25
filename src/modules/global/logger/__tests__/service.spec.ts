@@ -19,7 +19,6 @@ describe('LoggerService', () => {
     }).compile();
 
     loggerService = module.get(ILoggerService);
-    loggerService.setContext('TestLog');
   });
 
   describe('error', () => {
@@ -46,6 +45,7 @@ describe('LoggerService', () => {
     test('should error successfully without dev env', () => {
       const error = new AppException('Error', 500);
       error.statusCode = undefined;
+      error.context = 'TestLog';
       new LoggerService('dev').error(error);
     });
   });
