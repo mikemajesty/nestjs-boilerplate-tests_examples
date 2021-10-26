@@ -49,7 +49,7 @@ describe('CustomerController (e2e)', () => {
 
       return request(app.getHttpServer())
         .get('/customer')
-        .expect({ statusCode: 400, message: 'Error' });
+        .expect({ statusCode: HttpStatus.BAD_REQUEST, message: 'Error' });
     });
   });
 
@@ -68,9 +68,10 @@ describe('CustomerController (e2e)', () => {
           new AppException('Error', HttpStatus.PRECONDITION_FAILED),
         );
 
-      return request(app.getHttpServer())
-        .post('/customer')
-        .expect({ statusCode: 412, message: 'Error' });
+      return request(app.getHttpServer()).post('/customer').expect({
+        statusCode: HttpStatus.PRECONDITION_FAILED,
+        message: 'Error',
+      });
     });
   });
 
@@ -89,9 +90,10 @@ describe('CustomerController (e2e)', () => {
           new AppException('Error', HttpStatus.INTERNAL_SERVER_ERROR),
         );
 
-      return request(app.getHttpServer())
-        .put('/customer/1')
-        .expect({ statusCode: 500, message: 'Error' });
+      return request(app.getHttpServer()).put('/customer/1').expect({
+        statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+        message: 'Error',
+      });
     });
   });
 
@@ -110,7 +112,7 @@ describe('CustomerController (e2e)', () => {
 
       return request(app.getHttpServer())
         .delete('/customer/1')
-        .expect({ statusCode: 418, message: 'Error' });
+        .expect({ statusCode: HttpStatus.I_AM_A_TEAPOT, message: 'Error' });
     });
   });
 
