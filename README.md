@@ -4,7 +4,7 @@ Check the [contributing manual](./CONTRIBUTING.md)
 
 ## Description
 
-##### The best nestjs boilerplate using Anti-corruption Layer pattern, secrets, logger, Mysql, Docker and unit tests
+##### The best nestjs boilerplate using Anti-corruption Layer pattern, secrets, logger, Mysql, migration, Docker and unit tests.
 
 [nest](https://docs.nestjs.com/) framework documentaion.
 
@@ -28,10 +28,8 @@ Check the [contributing manual](./CONTRIBUTING.md)
 - `src/modules/common/`: Common modules that used for two or many modules.
 - `src/modules/common/**/adpater.ts`: Used to communicated with controller and others modules. Controllers and Modules must communicated with abstraction, not implementation.
 - `src/modules/global/`: Globals modules that is visibles for all modules.
-- `src/modules/global/secrets`: Modules settings and environment variables.
 - `src/utils/`: Utilities for the application that will not necessarily only be used within modules.
 - `src/static/`: Application static files like JSON, CSV etc.
-- `src/static/status.json`: Error message that will show to user accordind to status.
 
 ## prerequisites
 
@@ -93,8 +91,14 @@ $ yarn  test:coverage
 
 ```bash
 # create migration
-yarn migration --name=<migrationname>
+$ yarn migration:create --name=<migrationname>
 
+```
+
+## Generate version
+
+```bash
+$ yarn tag:production
 ```
 
 ## Usage
