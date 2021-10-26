@@ -1,3 +1,19 @@
+#### 0.0.5 (2021-10-26)
+
+##### Documentation Changes
+
+* **readme:**  improve doc ([9bb8eaab](https://github.com/mikemajesty/nestjs-boilerplat/commit/9bb8eaab668804f3d80e9eae94942406f2ebbbab))
+
+##### Refactors
+
+* **database:**  refactor module implementation ([5361dca5](https://github.com/mikemajesty/nestjs-boilerplat/commit/5361dca5bc40681c3518927fa0a1b7fd2bab2b3e))
+
+##### Tests
+
+* **customer:**
+  *  refactor tests expected status ([44a63803](https://github.com/mikemajesty/nestjs-boilerplat/commit/44a63803f9996a6f3f2c109d5e348a11aa17107e))
+  *  add tests ([758e7186](https://github.com/mikemajesty/nestjs-boilerplat/commit/758e7186314547313854047307487b245c8e843c))
+
 #### 0.0.4 (2021-10-26)
 
 ##### Chores
