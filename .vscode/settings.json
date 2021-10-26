@@ -3,6 +3,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
   "editor.formatOnSave": true,
   "eslint.validate": ["javascript"],
   "files.exclude": {
@@ -10,10 +15,5 @@
     "**/*lock*": true,
     "**/*bin*": true,
     "**/*coverage*": true
-  },
-  "[typescript]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    }
   }
 }
