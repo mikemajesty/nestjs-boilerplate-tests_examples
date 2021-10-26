@@ -4,7 +4,6 @@ import { IHttpService } from '../common/http/adapter';
 import { ILoggerService } from '../global/logger/adapter';
 import { ISecretsService } from '../global/secrets/adapter';
 import { IHealthService } from './adapter';
-
 @Injectable()
 export class HealthService implements IHealthService {
   constructor(

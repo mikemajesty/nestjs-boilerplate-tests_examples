@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class PostRefactoringTIMESTAMP implements MigrationInterface {
+export class AddCustomerTable implements MigrationInterface {
   async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query('DROP TABLE IF EXISTS `customer`.`customer`');
   }
