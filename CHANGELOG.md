@@ -1,3 +1,24 @@
+#### 0.0.4 (2021-10-26)
+
+##### Chores
+
+* **settings:**  organize config ([9c8bc7ff](https://github.com/mikemajesty/nestjs-boilerplat/commit/9c8bc7ff31720f4853a975922c1413fea53820a7))
+* **loggerservice:**  add context to test ([4ead4abe](https://github.com/mikemajesty/nestjs-boilerplat/commit/4ead4abee0530a79f947ff1677d7458a755f8278))
+
+##### Documentation Changes
+
+* **readme:**
+  *  fix error text ([cac12eb0](https://github.com/mikemajesty/nestjs-boilerplat/commit/cac12eb054768db6fd7c3066ea95954e20c91a66))
+  *  improve doc ([911a13a0](https://github.com/mikemajesty/nestjs-boilerplat/commit/911a13a0866d690251b17a32f14149bc25b5d290))
+
+##### New Features
+
+* **app:**  refactor imports and config database ([e070ca77](https://github.com/mikemajesty/nestjs-boilerplat/commit/e070ca7768e7fc413bbe2a9fee15453b26ec0ce3))
+
+##### Code Style Changes
+
+* **app:**  refactor imports position ([973d323a](https://github.com/mikemajesty/nestjs-boilerplat/commit/973d323ad47b700f593a897ce4cc71dfe4319b3b))
+
 #### 0.0.3 (2021-10-25)
 
 ##### New Features
