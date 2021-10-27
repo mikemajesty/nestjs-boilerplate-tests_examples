@@ -1,3 +1,21 @@
+#### 0.0.6 (2021-10-27)
+
+##### Documentation Changes
+
+* **swagger:**  add swagger information ([b84ac3be](https://github.com/mikemajesty/nestjs-boilerplat/commit/b84ac3bea660f1c366a0618bc1e9ae4b52b30d66))
+
+##### New Features
+
+* **swagger:**  add swagger ([e343773a](https://github.com/mikemajesty/nestjs-boilerplat/commit/e343773a053e74c3dfddc72494f7e566f0613216))
+
+##### Other Changes
+
+* //github.com/mikemajesty/nestjs-boilerplate ([e668fb5d](https://github.com/mikemajesty/nestjs-boilerplat/commit/e668fb5daaf520915d3eba897394c9dd6e6132fb))
+
+##### Code Style Changes
+
+* **migrations:**  rename file ([c37e9acc](https://github.com/mikemajesty/nestjs-boilerplat/commit/c37e9acc1682e8a8ef7eca7f48f5c1900bd6260d))
+
 #### 0.0.5 (2021-10-26)
 
 ##### Documentation Changes
