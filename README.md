@@ -87,6 +87,14 @@ $ yarn  test:e2e
 $ yarn  test:coverage
 ```
 
+#Swagger
+
+```bash
+# swagger documentation
+http://localhost:3000/api/#/
+
+```
+
 ## Migrations
 
 ```bash
