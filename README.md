@@ -56,11 +56,15 @@ DB_PASSWORD='admin'
 DB_DATABASE='customer'
 ```
 
+--
+
 ## Installation
 
 ```bash
 $ yarn
 ```
+
+--
 
 ## Running the app
 
@@ -73,6 +77,8 @@ $ yarn start:dev
 # dev/hml/prd environment
 $ docker-compose up --build
 ```
+
+-- 
 
 ## Test
 
@@ -87,13 +93,16 @@ $ yarn  test:e2e
 $ yarn  test:coverage
 ```
 
-# Swagger
+--
+
+## Swagger
 
 ```bash
 # swagger documentation
 http://localhost:3000/api/#/
 
 ```
+--
 
 ## Migrations
 
@@ -103,11 +112,15 @@ $ yarn migration:create --name=<migrationname>
 
 ```
 
+--
+
 ## Generate version
 
 ```bash
 $ yarn tag:production
 ```
+
+--
 
 ## Usage
 
