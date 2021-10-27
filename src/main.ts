@@ -1,6 +1,8 @@
 import { HttpStatus, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
+import { description, name, version } from '../package.json';
 import { AppExceptionFilter } from './filters/http-exception.filter';
 import { ExceptionInterceptor } from './interceptors/http-exception.interceptor';
 import { AppModule } from './modules/app.module';
@@ -27,6 +29,16 @@ async function bootstrap() {
   app.setGlobalPrefix('api', {
     exclude: [{ path: 'health', method: RequestMethod.GET }],
   });
+
+  const config = new DocumentBuilder()
+    .setTitle(name)
+    .setDescription(description)
+    .setVersion(version)
+    .addTag('API')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
   loggerService.log(
     `API listening at ${PORT} on ${ENV?.toUpperCase()} 🚀\n`,

@@ -7,11 +7,12 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { ICustomerService } from './adapter';
 import { Customer } from './entity';
-
 @Controller('/customer')
+@ApiTags('customer')
 export class CustomerController {
   constructor(
     private readonly customerRepository: ICustomerService<Customer>,
